@@ -2,7 +2,7 @@
   "name": "website-src",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://RSee07.github.io/richardsee",
+  "homepage": "http://RSee07.github.io/",
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
