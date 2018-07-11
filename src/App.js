@@ -1,34 +1,49 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom'
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { 
+    BrowserRouter,
+    Route,
+    NavLink,
+    Switch
+} from 'react-router-dom'
+import Work from '../src/Components/Work'
+import About from '../src/Components/About'
+import Contact from '../src/Components/Contact'
+import './App.css'
 
-class App extends Component {
+class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
                 <div className="App">
                     <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Hi I'm Richard</h1>
                     </header>
 
-                    <Link to="/newpage" >Test link</Link>
-                    <Route path="/newpage" component={NewPage} />
+                    <NavLink to="/work" style={{padding: "10px", display: "inline-block"}}>Work</NavLink>
+                    <NavLink to="/about" style={{padding: "10px", display: "inline-block"}}>About</NavLink>
+                    <NavLink to="/contact" style={{padding: "10px", display: "inline-block"}}>Contact</NavLink>
+                    <NavLink to="/testpage" style={{padding: "10px", display: "inline-block"}}>Test link</NavLink>
+
+                    <Switch>
+                        <Route path="/work" render={() => <Work work="Work page" />} />
+                        <Route path="/about" render={() => <About about="About page" />} />
+                        <Route path="/contact" render={() => <Contact contact="Contact page" />} />
+                        <Route path="/testpage" component={TestPage} />
+                    </Switch>
                 </div>
             </BrowserRouter>
-        );
+        )
     }
 }
 
-const NewPage = () => (
+const TestPage = () => (
     <div>
         <h3>Welcome to the new page. Please select more options</h3>
-        <Link to="/newpage/one" style={{padding: "0 10px"}}>One</Link>
-        <Link to="/newpage/two" style={{padding: "0 10px"}}>Two</Link>
-        <Link to="/newpage/three" style={{padding: "0 10px"}}>Three</Link>
+        <NavLink to="/testpage/one" style={{padding: "0 10px"}}>One</NavLink>
+        <NavLink to="/testpage/two" style={{padding: "0 10px"}}>Two</NavLink>
+        <NavLink to="/tetpage/three" style={{padding: "0 10px"}}>Three</NavLink>
         <Route
-            path="/newpage/:count"
+            path="/testpage/:count"
             render={({match}) => <div style={{padding: "15px"}}>{match.params.count}</div>}
         />
     </div>
