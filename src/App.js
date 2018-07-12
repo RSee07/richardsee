@@ -25,7 +25,7 @@ const Background = styled.div`
     justify-content: center;
 `
 
-const TitleContainer = styled.div`
+const TitleWrapper = styled.div`
     position: relative;
     background: inherit;
     border-radius: 10px;
@@ -78,11 +78,11 @@ class App extends React.Component {
             <BrowserRouter>
                 <div>
                     <Background>
-                        <TitleContainer>
+                        <TitleWrapper>
                             <TitleBox>
                                 <Title>Richard See</Title>
                             </TitleBox>
-                        </TitleContainer>
+                        </TitleWrapper>
                     </Background>
 
                     <div style={{height: '1000px'}}>
