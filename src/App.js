@@ -61,7 +61,6 @@ class App extends React.Component {
                             <Route path="/work" render={() => <Work work="Work page" />} />
                             <Route path="/about" render={() => <About about="About page" />} />
                             <Route path="/contact" render={() => <Contact contact="Contact page" />} />
-                            {/* <Route path="/testpage" component={TestPage} /> */}
                         </Switch>
                     </div>
                 </Fragment>
@@ -69,18 +68,5 @@ class App extends React.Component {
         )
     }
 }
-
-// const TestPage = () => (
-//     <div>
-//         <h3>Welcome to the new page. Please select more options</h3>
-//         <NavLink to="/testpage/one" style={{padding: "0 10px"}}>One</NavLink>
-//         <NavLink to="/testpage/two" style={{padding: "0 10px"}}>Two</NavLink>
-//         <NavLink to="/testpage/three" style={{padding: "0 10px"}}>Three</NavLink>
-//         <Route
-//             path="/testpage/:count"
-//             render={({match}) => <div style={{padding: "15px"}}>{match.params.count}</div>}
-//         />
-//     </div>
-// )
 
 export default App;

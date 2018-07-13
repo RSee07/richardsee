@@ -41,7 +41,6 @@ const Header = () => (
             <Nav to="/work">Work</Nav>
             <Nav to="/about">About</Nav>
             <Nav to="/contact">Contact</Nav>
-            {/* <Nav to="/testpage">Test link</Nav> */}
         </Head>
     </Fragment>
 )
