@@ -3,9 +3,7 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Head = styled.header`
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    text-align: right;
     padding: 20px;
 `
 
@@ -15,6 +13,7 @@ const Nav = styled(NavLink)`
     display: inline-block;
     text-decoration: none;
     font-size: 28px;
+    transition: all .15s ease-in-out;
 
     @media (min-width: 600px) {
         font-size: 32px;
@@ -25,7 +24,7 @@ const Nav = styled(NavLink)`
     }
 
     @media (min-width: 1200px) {
-        font-size: 40px;
+        font-size: 50px;
     }
 
     &:hover {

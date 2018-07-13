@@ -6,8 +6,8 @@ import {
     Switch
 } from 'react-router-dom'
 import styled from 'styled-components'
+import me from './static/media/me.png'
 import Header from './components/Header'
-
 import Work from './components/Work'
 import About from './components/About'
 import Contact from './components/Contact'
@@ -16,10 +16,12 @@ const Background = styled.div`
     height: 100vh;
     width: 100vw;
     background-color: #282828;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `
 
 const TitleWrapper = styled.div`
-    display: inline-block;
     padding: 20px;
 
     @media (min-width: 600px) {
@@ -41,7 +43,37 @@ const Title = styled.h1`
     }
 
     @media (min-width: 1200px) {
-        font-size: 50px;
+        font-size: 60px;
+    }
+`
+
+const Hero = styled.img`
+    height: 220px;
+    width: 220px;
+    margin: auto;
+    display: block;
+    filter: grayscale(100%);
+    transition: all .25s ease-in-out;
+
+    @media (min-width: 600px) {
+        height: 320px;
+        width: 320px;
+    }
+
+    @media (min-width: 900px) {
+        height: 400px;
+        width: 400px;
+    }
+
+    @media (min-width: 1200px) {
+        height: 420px;
+        width: 420px;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        transition: all .2s ease-in-out;
+        filter: grayscale(0%);
     }
 `
 
@@ -54,6 +86,7 @@ class App extends React.Component {
                         <TitleWrapper>
                             <Title>RICHARD SEE</Title>
                         </TitleWrapper>
+                        <Hero src={me}/>
                         <Header />
                     </Background>
                     <div style={{height: '700px'}}>
