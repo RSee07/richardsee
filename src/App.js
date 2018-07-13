@@ -19,8 +19,12 @@ const Background = styled.div`
 `
 
 const TitleWrapper = styled.div`
-    padding: 15px 40px;
-    position: relative;
+    display: inline-block;
+    padding: 20px;
+
+    @media (min-width: 600px) {
+        font-size: 40px;
+    }
 `
 
 const Title = styled.h1`
@@ -39,10 +43,6 @@ const Title = styled.h1`
     @media (min-width: 1200px) {
         font-size: 50px;
     }
-
-    @media (min-width: 1800px) {
-        font-size: 50px;
-    }
 `
 
 class App extends React.Component {
@@ -51,17 +51,17 @@ class App extends React.Component {
             <BrowserRouter>
                 <Fragment>
                     <Background>
-                        <Header />
                         <TitleWrapper>
                             <Title>RICHARD SEE</Title>
                         </TitleWrapper>
+                        <Header />
                     </Background>
                     <div style={{height: '700px'}}>
                         <Switch>
                             <Route path="/work" render={() => <Work work="Work page" />} />
                             <Route path="/about" render={() => <About about="About page" />} />
                             <Route path="/contact" render={() => <Contact contact="Contact page" />} />
-                            <Route path="/testpage" component={TestPage} />
+                            {/* <Route path="/testpage" component={TestPage} /> */}
                         </Switch>
                     </div>
                 </Fragment>
@@ -70,17 +70,17 @@ class App extends React.Component {
     }
 }
 
-const TestPage = () => (
-    <div>
-        <h3>Welcome to the new page. Please select more options</h3>
-        <NavLink to="/testpage/one" style={{padding: "0 10px"}}>One</NavLink>
-        <NavLink to="/testpage/two" style={{padding: "0 10px"}}>Two</NavLink>
-        <NavLink to="/testpage/three" style={{padding: "0 10px"}}>Three</NavLink>
-        <Route
-            path="/testpage/:count"
-            render={({match}) => <div style={{padding: "15px"}}>{match.params.count}</div>}
-        />
-    </div>
-)
+// const TestPage = () => (
+//     <div>
+//         <h3>Welcome to the new page. Please select more options</h3>
+//         <NavLink to="/testpage/one" style={{padding: "0 10px"}}>One</NavLink>
+//         <NavLink to="/testpage/two" style={{padding: "0 10px"}}>Two</NavLink>
+//         <NavLink to="/testpage/three" style={{padding: "0 10px"}}>Three</NavLink>
+//         <Route
+//             path="/testpage/:count"
+//             render={({match}) => <div style={{padding: "15px"}}>{match.params.count}</div>}
+//         />
+//     </div>
+// )
 
 export default App;

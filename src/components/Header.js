@@ -4,17 +4,44 @@ import styled from 'styled-components'
 
 const Head = styled.header`
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
+    padding: 20px;
+`
+
+const Nav = styled(NavLink)`
+    margin: 0 15px;
+    color: #ffffff;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 28px;
+
+    @media (min-width: 600px) {
+        font-size: 32px;
+    }
+
+    @media (min-width: 900px) {
+        font-size: 40px;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 40px;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        transition: all .15s ease-in-out;
+        color: #ff6600;
+    }
 `
 
 const Header = () => (
     <Fragment>
         <Head>
-            <NavLink to="/work" style={{padding: "15px", display: "inline-block"}}>Work</NavLink>
-            <NavLink to="/about" style={{padding: "15px", display: "inline-block"}}>About</NavLink>
-            <NavLink to="/contact" style={{padding: "15px", display: "inline-block"}}>Contact</NavLink>
-            <NavLink to="/testpage" style={{padding: "15px", display: "inline-block"}}>Test link</NavLink>
+            <Nav to="/work">Work</Nav>
+            <Nav to="/about">About</Nav>
+            <Nav to="/contact">Contact</Nav>
+            {/* <Nav to="/testpage">Test link</Nav> */}
         </Head>
     </Fragment>
 )
