@@ -7,6 +7,12 @@ const Link = styled.a`
     display: block;
     font-size: 30px;
     text-decoration: none;
+    transition: all .15s ease-in-out;
+
+    &:hover {
+        transition: all .15s ease-in-out;
+        color: #ff6600;
+    }
 `
 const Contact = (props) => (
     <Fragment>

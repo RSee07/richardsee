@@ -23,7 +23,6 @@ const Nav = styled(Link)`
     }
 
     &:hover {
-        /* transform: scale(1.1); */
         transition: all .15s ease-in-out;
         color: #ff6600;
     }
