@@ -20,17 +20,17 @@ const Background = styled.div`
 const RouteWrapper = styled.div`
     height: 100%;
     width: 100%;
-    margin-left: 20px;
+    margin-left: ${prop => prop.marginLeft ? "20px" : "0"};
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     @media (min-width: 600px) {
-        margin-left: 40px;
+        margin-left: ${prop => prop.marginLeft ? "40px" : "0"};
     }
 
     @media (min-width: 1200px) {
-        margin-left: 100px;
+        margin-left: ${prop => prop.marginLeft ? "100px" : "0"};
     }
 `
 
@@ -40,14 +40,41 @@ class App extends React.Component {
             <BrowserRouter>
                 <Fragment>
                     <Background>
-                        <RouteWrapper>
-                            <Switch>
-                                <Route exact path="/" render={() => <Intro />} />
-                                <Route path="/work" render={() => <Work work="Work page" />} />
-                                <Route path="/about" render={() => <About about="About page" />} />
-                                <Route path="/contact" render={() => <Contact contact={data.contact}/>} />
-                            </Switch>
-                        </RouteWrapper>
+                        <Switch>
+                            <Route
+                                exact
+                                path="/"
+                                render={() =>
+                                    <RouteWrapper marginLeft >
+                                        <Intro />
+                                    </RouteWrapper>
+                                }
+                            />
+                            <Route
+                                path="/about"
+                                render={() =>
+                                    <RouteWrapper>
+                                        <About about="About page" />
+                                    </RouteWrapper>
+                                }
+                            />
+                            <Route
+                                path="/work"
+                                render={() =>
+                                    <RouteWrapper>
+                                         <Work work="Work page" />
+                                    </RouteWrapper>
+                                }
+                            />
+                            <Route
+                                path="/contact"
+                                render={() =>
+                                    <RouteWrapper marginLeft >
+                                        <Contact contact={data.contact}/>
+                                    </RouteWrapper>
+                                }
+                            />
+                        </Switch>
                     </Background>
                 </Fragment>
             </BrowserRouter>
