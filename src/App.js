@@ -40,15 +40,7 @@ class App extends React.Component {
                 <Fragment>
                     <Background>
                         <Switch>
-                            <Route
-                                exact
-                                path="/"
-                                render={() =>
-                                    <RouteWrapper marginLeft >
-                                        <Intro />
-                                    </RouteWrapper>
-                                }
-                            />
+                            
                             <Route
                                 path="/about"
                                 render={() =>
@@ -70,6 +62,14 @@ class App extends React.Component {
                                 render={() =>
                                     <RouteWrapper marginLeft >
                                         <Contact contact={data.contact}/>
+                                    </RouteWrapper>
+                                }
+                            />
+                            <Route
+                                path="/"
+                                render={() =>
+                                    <RouteWrapper marginLeft >
+                                        <Intro />
                                     </RouteWrapper>
                                 }
                             />
