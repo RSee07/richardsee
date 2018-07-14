@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import {
     BrowserRouter,
     Route,
-    NavLink,
     Switch
 } from 'react-router-dom'
 import styled from 'styled-components'

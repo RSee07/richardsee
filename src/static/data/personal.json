@@ -1,0 +1,150 @@
+{
+    "name": "Richard See",
+    "email": "ricardosee@gmail.com",
+    "mobile": "+64 21 120 3515",
+    "linkedIn": "www.linkedin.com/in/richard-see",
+    "profile": [
+        "I am passionate about software that delivers meaningful benefit to users. I am driven to create customer delight through intuitive digital experiences and to streamline work processes using modern software solutions.",
+        "My roles have given me a sound understanding on how to manage ambiguity, and approach issues in a logical manner to reach a fitting outcome. I thrive in a team environment, contributing my own skills in a collaborative approach."
+    ],
+    "educationAchievements": [
+        {
+            "title": "The University of Auckland",
+            "description": "Bachelor of Engineering (Honours) in Computer Systems Engineering",
+            "year": "2012-2015"
+        },
+        {
+            "title": "Winner of Engineering Part IV Research Project",
+            "description": "Parallel and Distributed Systems Category: Distributed Context-Aware Intelligent Environment",
+            "year": "2015"
+        },
+        {
+            "title": "Wellington College",
+            "description": "",
+            "year": "2007-2011"
+        }
+    ],
+    "coreSkills": [
+        "React",
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Testing",
+        "ASP.NET MVC",
+        "SQL",
+        "Git",
+        "UI/UX design",
+        "Agile",
+        "Teamwork",
+        "Leadership",
+        "Effective communication",
+        "Critical thinking",
+        "Customer focused delivery"
+    ],
+    "careerHistory": [
+        {
+            "title": "Online Development Engineer",
+            "company": "Spark New Zealand",
+            "work": [
+                {
+                    "title": "React Development",
+                    "date": "Nov 2017-May 2018",
+                    "description": [
+                        "Built new homepage to deliver personalised customer experiences",
+                        "Collaborated with designers and testers to produce highly reusable and robust components to deploy across the Spark website",
+                        "Tests written using Jest, Enzyme and Storybook"
+                    ]
+                },
+                {
+                    "title": "Spark Public WiFi",
+                    "date": "Oct 2017-Mar 2018",
+                    "description": [
+                        "Design of captive portals for customers and general public to access free WiFi through phone boxes located nationwide",
+                        "Refined connection journey resulting in simpler user experience and text message cost reduction of 40%",
+                        "Implemented front-end design to enable WiFi access to Australian and UK mobile numbers",
+                        "Worked closely with customers to develop custom captive portals, delivered fast turnaround with high satisfaction"
+                    ]
+                }
+            ]
+        },
+        { 
+            "title": "Associate Development Engineer",
+            "company": "Spark New Zealand",
+            "work": [
+                {
+                    "title": "ReAssure Communications",
+                    "date": "Sep 2016-Oct 2017",
+                    "description": [
+                        "Built web application to view and send comms for priority incidents using ASP.NET MVC to replace licensed tool purchased annually",
+                        "Involved in all stages of software development lifecycle",
+                        "Full-stack development - managed database changes using SQL Server right to UI/UX design with jQuery and Kendo UI for webpage interaction",
+                        "Completed project resulted in yearly savings of $250,000"
+                    ]
+                },
+                {
+                    "title": "Mentor",
+                    "date": "Nov 2016-Feb 2017",
+                    "description": [
+                        "Mentored TupuToa intern over summer providing leadership and direction around ReAssure project, reinforced best coding practices",
+                        "Day-to-day guidance and introduction to company culture"
+                    ]
+                },
+                {
+                    "title": "Environment Monitor",
+                    "date": "Dec 2015-Jul 2016",
+                    "description": [
+                        "Created an end-to-end environment monitor solution as a side project",
+                        "Designed and built a sensor board to feed environmental data into a Raspberry Pi. Data retrieved and aggregated using Python scripts",
+                        "Digital Ocean droplet stood up to hold data using InfluxDB, with Splunk and Grafana handling visualisation"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Intern",
+            "company": "Cubic Defence New Zealand",
+            "work": [
+                {
+                    "title": "Laser Beam Alignment Tool",
+                    "date": "Nov 2014-Feb 2015",
+                    "description": [
+                        "Repurposed existing laser detector modules worn by soldiers into a matrix to align weapons more efficiently using C",
+                        "Delivered project in sprints implementing the Atlassian Stack",
+                        "Hands-on experience with tools and equipment to test and debug"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Contractor",
+            "company": "Studiosity (formerly YourTutor)",
+            "work": [
+                {
+                    "title": "Online Tutor",
+                    "date": "Feb 2014-Dec 2015",
+                    "description": [
+                        "Tutored Australian students 1:1 online from ages 8-18",
+                        "Lessons held through web application connecting students to tutors in real time, with a chat messenger and whiteboard for interaction",
+                        "Shared knowledge of subjects, coached and mentored students through questions to achieve better understanding",
+                        "Subjects: Maths, Physics, Science, Assignment Research, Study Skills"
+                    ]
+                }
+            ]
+        }
+    ],
+    "interests": [
+        {
+            "title": "Craft Beer",
+            "description": ""
+        },
+        {
+            "title": "Exploring Technologies",
+            "description": "Built controller connected to Raspberry Pi to control LIFX lights"
+        }
+    ]
+  }
+  
+  
+  
+  
+  
