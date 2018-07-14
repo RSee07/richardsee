@@ -19,7 +19,6 @@ const Background = styled.div`
 
 const RouteWrapper = styled.div`
     height: 100%;
-    width: 100%;
     margin-left: ${prop => prop.marginLeft ? "20px" : "0"};
     display: flex;
     flex-direction: column;
