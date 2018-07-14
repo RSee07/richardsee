@@ -1,8 +1,12 @@
 {
     "name": "Richard See",
-    "email": "ricardosee@gmail.com",
-    "mobile": "+64 21 120 3515",
-    "linkedIn": "www.linkedin.com/in/richard-see",
+    "contact": {
+        "email": "ricardosee@gmail.com",
+        "mobile": "+64 21 120 3515",
+        "linkedIn": "https://www.linkedin.com/in/richard-see",
+        "facebook": "https://www.facebook.com/richardcysee",
+        "instagram": "https://www.instagram.com/richard_cy_see"
+    },
     "profile": [
         "I am passionate about software that delivers meaningful benefit to users. I am driven to create customer delight through intuitive digital experiences and to streamline work processes using modern software solutions.",
         "My roles have given me a sound understanding on how to manage ambiguity, and approach issues in a logical manner to reach a fitting outcome. I thrive in a team environment, contributing my own skills in a collaborative approach."

@@ -17,7 +17,7 @@ const Background = styled.div`
     background-color: #282828;
 `
 
-const IntroWrapper = styled.div`
+const RouteWrapper = styled.div`
     height: 100%;
     width: 100%;
     margin-left: 20px;
@@ -36,26 +36,23 @@ const IntroWrapper = styled.div`
 
 class App extends React.Component {
     render() {
-        console.log(data)
         return (
             <BrowserRouter>
                 <Fragment>
                     <Background>
-                        <IntroWrapper>
-                            <Intro />
-                        </IntroWrapper>
+                        <RouteWrapper>
+                            <Switch>
+                                <Route exact path="/" render={() => <Intro />} />
+                                <Route path="/work" render={() => <Work work="Work page" />} />
+                                <Route path="/about" render={() => <About about="About page" />} />
+                                <Route path="/contact" render={() => <Contact contact={data.contact}/>} />
+                            </Switch>
+                        </RouteWrapper>
                     </Background>
-                    <div style={{height: '700px'}}>
-                        <Switch>
-                            <Route path="/work" render={() => <Work work="Work page" />} />
-                            <Route path="/about" render={() => <About about="About page" />} />
-                            <Route path="/contact" render={() => <Contact contact="Contact page" />} />
-                        </Switch>
-                    </div>
                 </Fragment>
             </BrowserRouter>
         )
     }
 }
 
-export default App;
+export default App

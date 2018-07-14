@@ -11,17 +11,14 @@ const Nav = styled(Link)`
     transition: all .15s ease-in-out;
 
     @media (min-width: 600px) {
-        margin: 10px 0;
         font-size: 38px;
     }
 
     @media (min-width: 900px) {
-        margin: 10px 0;
         font-size: 60px;
     }
 
     @media (min-width: 1200px) {
-        margin: 10px 0;
         font-size: 70px;
     }
 
@@ -34,7 +31,7 @@ const Nav = styled(Link)`
 
 const Intro = () => (
     <Fragment>
-        <Nav to="/about">MY NAME IS RICHARD</Nav>
+        <Nav to="/about">HI MY NAME IS RICHARD</Nav>
         <Nav to="/work">I'M A SOFTWARE ENGINEER</Nav>
         <Nav to="/contact">PLEASE GET IN TOUCH</Nav>
     </Fragment>
