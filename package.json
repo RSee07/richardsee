@@ -98,7 +98,7 @@
             "node",
             "mjs"
         ],
-        "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+        "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
     },
     "babel": {
         "presets": [
