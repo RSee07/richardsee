@@ -40,7 +40,6 @@ class App extends React.Component {
                 <Fragment>
                     <Background>
                         <Switch>
-                            
                             <Route
                                 path="/about"
                                 render={() =>
