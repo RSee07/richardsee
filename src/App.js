@@ -40,19 +40,18 @@ export default class App extends React.Component {
             <BrowserRouter>
                 <Fragment>
                     <Background>
-                        <Header />
                         <Switch>
                             <Route
                                 path="/about"
-                                render={() => <RouteWrapper><About about="About page" /></RouteWrapper>}
+                                render={() => <Fragment><Header /><RouteWrapper><About about="About page" /></RouteWrapper></Fragment>}
                             />
                             <Route
                                 path="/work"
-                                render={() => <RouteWrapper><Work work="Work page" /></RouteWrapper>}
+                                render={() => <Fragment><Header /><RouteWrapper><Work work="Work page" /></RouteWrapper></Fragment>}
                             />
                             <Route
                                 path="/contact"
-                                render={() => <RouteWrapper marginLeft ><Contact contact={data.contact}/></RouteWrapper>}
+                                render={() => <Fragment><Header /><RouteWrapper marginLeft ><Contact contact={data.contact}/></RouteWrapper></Fragment>}
                             />
                             <Route
                                 path="/"
