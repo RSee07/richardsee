@@ -5,53 +5,106 @@ import styled from 'styled-components'
 const Head = styled.header`
     position: fixed;
     width: 100%;
-    text-align: right;
-    background-color: green;
+    background-color: #020202;
     height: 40px;
+    box-shadow: 0px 0px 8px 2px #000000;
 `
 
-const Icon = styled.div`
-    width: 30px;
-    height: 30px;
-    background-color: blue;
+const DropdownWrapper = styled.div`
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    background-color: yellow;
+
+    &:focus {
+        outline: none;
+    }
+`
+
+const DropdownButton = styled.button`
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+`
+
+const ListWrapper = styled.ul`
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #020202;
+    box-shadow: 0px 0px 8px 2px #000000;
+`
+
+const ListItem = styled.li`
+    display: inline-flex;
+    padding: 0;
+    width: 100%;
+    height: 40px;
+    border-top: white 1px solid;
+
+    @media (min-width: 1200px) {
+        height: 50px;
+    }
 `
 
 const Nav = styled(NavLink)`
-    margin: 0 15px;
+    width: 100%;
+    text-align: center;
     color: #ffffff;
-    display: inline-block;
     text-decoration: none;
-    font-size: 28px;
+    font-size: 20px;
+    margin: auto;
     transition: all .15s ease-in-out;
 
-    @media (min-width: 600px) {
-        font-size: 32px;
-    }
-
-    @media (min-width: 900px) {
-        font-size: 40px;
-    }
-
     @media (min-width: 1200px) {
-        font-size: 50px;
+        font-size: 28px;
     }
 
     &:hover {
-        transform: scale(1.1);
         transition: all .15s ease-in-out;
         color: #ff6600;
     }
 `
 
 export default class Header extends React.Component {
+    state = {
+        openDropdown: false,
+    }
+
+    toggleDropdown = this.toggleDropdown.bind(this)
+
+    toggleDropdown() {
+        this.setState(prevState => ({
+            openDropdown: !prevState.openDropdown
+        }))
+    }
+
     render() {
         return(
             <Fragment>
                 <Head>
-                    <Icon/>
-                    {/* <Nav to="/work">Work</Nav>
-                    <Nav to="/about">About</Nav>
-                    <Nav to="/contact">Contact</Nav> */}
+                    <DropdownWrapper>
+                        <DropdownButton onClick={this.toggleDropdown}>RS</DropdownButton>
+                    </DropdownWrapper>
+                    {
+                        this.state.openDropdown && 
+                        <nav>
+                            <ListWrapper>
+                                <ListItem><Nav to="/">Home</Nav></ListItem>
+                                <ListItem><Nav to="/work">Work</Nav></ListItem>
+                                <ListItem><Nav to="/about">About</Nav></ListItem>
+                                <ListItem><Nav to="/contact">Contact</Nav></ListItem>
+                            </ListWrapper>
+                        </nav>
+                    }
                 </Head>
             </Fragment>
         )
