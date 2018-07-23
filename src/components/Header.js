@@ -5,8 +5,9 @@ import styled from 'styled-components'
 const Head = styled.header`
     position: fixed;
     width: 100%;
-    background-color: #020202;
     height: 40px;
+    z-index: 1;
+    background-color: #020202;
     box-shadow: 0px 0px 8px 2px #000000;
 `
 
@@ -98,10 +99,10 @@ export default class Header extends React.Component {
                         this.state.openDropdown && 
                         <nav>
                             <ListWrapper>
-                                <ListItem><Nav to="/">Home</Nav></ListItem>
-                                <ListItem><Nav to="/work">Work</Nav></ListItem>
-                                <ListItem><Nav to="/about">About</Nav></ListItem>
-                                <ListItem><Nav to="/contact">Contact</Nav></ListItem>
+                                <ListItem><Nav onClick={this.toggleDropdown} to="/">Home</Nav></ListItem>
+                                <ListItem><Nav onClick={this.toggleDropdown} to="/work">Work</Nav></ListItem>
+                                <ListItem><Nav onClick={this.toggleDropdown} to="/about">About</Nav></ListItem>
+                                <ListItem><Nav onClick={this.toggleDropdown} to="/contact">Contact</Nav></ListItem>
                             </ListWrapper>
                         </nav>
                     }
