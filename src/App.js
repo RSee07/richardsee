@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import styled from 'styled-components'
 import data from './static/data/personal.json'
+import Header from './components/Header'
 import Intro from './components/Intro'
 import Work from './components/Work'
 import About from './components/About'
@@ -33,12 +34,13 @@ const RouteWrapper = styled.div`
     }
 `
 
-class App extends React.Component {
+export default class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
                 <Fragment>
                     <Background>
+                        <Header />
                         <Switch>
                             <Route
                                 path="/about"
@@ -63,5 +65,3 @@ class App extends React.Component {
         )
     }
 }
-
-export default App
