@@ -42,35 +42,19 @@ class App extends React.Component {
                         <Switch>
                             <Route
                                 path="/about"
-                                render={() =>
-                                    <RouteWrapper>
-                                        <About about="About page" />
-                                    </RouteWrapper>
-                                }
+                                render={() => <RouteWrapper><About about="About page" /></RouteWrapper>}
                             />
                             <Route
                                 path="/work"
-                                render={() =>
-                                    <RouteWrapper>
-                                         <Work work="Work page" />
-                                    </RouteWrapper>
-                                }
+                                render={() => <RouteWrapper><Work work="Work page" /></RouteWrapper>}
                             />
                             <Route
                                 path="/contact"
-                                render={() =>
-                                    <RouteWrapper marginLeft >
-                                        <Contact contact={data.contact}/>
-                                    </RouteWrapper>
-                                }
+                                render={() => <RouteWrapper marginLeft ><Contact contact={data.contact}/></RouteWrapper>}
                             />
                             <Route
                                 path="/"
-                                render={() =>
-                                    <RouteWrapper marginLeft >
-                                        <Intro />
-                                    </RouteWrapper>
-                                }
+                                render={() => <RouteWrapper marginLeft ><Intro /></RouteWrapper>}
                             />
                         </Switch>
                     </Background>

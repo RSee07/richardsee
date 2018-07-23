@@ -10,6 +10,14 @@ const Nav = styled(Link)`
     font-size: 20px;
     transition: all .15s ease-in-out;
 
+    @media (min-width: 375px) {
+        font-size: 23px;
+    }
+
+    @media (min-width: 414px) {
+        font-size: 26px;
+    }
+
     @media (min-width: 600px) {
         font-size: 38px;
     }
