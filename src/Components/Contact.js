@@ -16,7 +16,7 @@ const Link = styled.a`
 `
 const Contact = (props) => (
     <Fragment>
-        <Link href={"mailto:" + props.contact.email + "?subject=Test"}>Email</Link>
+        <Link href={"mailto:" + props.contact.email + "?subject=Enquiries"}>Email</Link>
         <Link href={"tel:" + props.contact.mobile}>Mobile</Link>
         <Link target="_blank" rel="noopener noreferrer" href={props.contact.linkedIn}>LinkedIn</Link>
         <Link target="_blank" rel="noopener noreferrer" href={props.contact.facebook}>Facebook</Link>

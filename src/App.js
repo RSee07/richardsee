@@ -5,7 +5,7 @@ import {
     Switch
 } from 'react-router-dom'
 import styled from 'styled-components'
-import data from './static/data/personal.json'
+import personal from './static/data/personal.json'
 import Header from './components/Header'
 import Intro from './components/Intro'
 import Work from './components/Work'
@@ -35,24 +35,57 @@ const RouteWrapper = styled.div`
 `
 
 export default class App extends React.Component {
+    // State definition
+    state = {
+        data: ""
+    }
+
+    componentDidMount() {
+        // Set data to JSON data once component has mounted
+        this.setState({
+            data: personal
+        })
+    }
+
     render() {
+        // Declare pages
+        const pages = ['about', 'work', 'contact']
+
+        // Loop through pages and generate Route for each
+        const routeLinks = pages.map(page => {
+            const path = '/' + page
+            let pageType
+
+            switch(page) {
+                case ('about'):
+                    pageType = <About page="About page" />
+                    break
+                case ('work'):
+                    pageType = <Work work="he page" />
+                    break
+                case ('contact'):
+                    // console.log(this.state.data.contact.email)
+                    pageType = <Contact contact={this.state.data.contact}/>
+                    break
+                default:
+                    break
+            }
+
+            return (
+                <Route key={page}
+                    path={path}
+                    render={() => <Fragment><Header /><RouteWrapper>{pageType}</RouteWrapper></Fragment>}
+                />
+            )
+        })
+
         return (
             <BrowserRouter>
                 <Fragment>
                     <Background>
                         <Switch>
-                            <Route
-                                path="/about"
-                                render={() => <Fragment><Header /><RouteWrapper><About about="About page" /></RouteWrapper></Fragment>}
-                            />
-                            <Route
-                                path="/work"
-                                render={() => <Fragment><Header /><RouteWrapper><Work work="Work page" /></RouteWrapper></Fragment>}
-                            />
-                            <Route
-                                path="/contact"
-                                render={() => <Fragment><Header /><RouteWrapper marginLeft ><Contact contact={data.contact}/></RouteWrapper></Fragment>}
-                            />
+                            {/* Conditionally render routeLinks once data has been loaded */}
+                            {this.state && this.state.data && routeLinks}
                             <Route
                                 path="/"
                                 render={() => <RouteWrapper marginLeft ><Intro /></RouteWrapper>}
