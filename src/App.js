@@ -8,7 +8,7 @@ import styled from 'styled-components'
 import personal from './static/data/personal.json'
 import Header from './components/Header'
 import Intro from './components/Intro'
-import Work from './components/Work'
+import Experience from './components/Experience'
 import About from './components/About'
 import Contact from './components/Contact'
 
@@ -49,7 +49,7 @@ export default class App extends React.Component {
 
     render() {
         // Declare pages
-        const pages = ['about', 'work', 'contact']
+        const pages = ['about', 'experience', 'contact']
 
         // Loop through pages and generate Route for each
         const routeLinks = pages.map(page => {
@@ -60,11 +60,10 @@ export default class App extends React.Component {
                 case ('about'):
                     pageType = <About page="About page" />
                     break
-                case ('work'):
-                    pageType = <Work work="he page" />
+                case ('experience'):
+                    pageType = <Experience coreSkills={this.state.data.coreSkills} careerHistory={this.state.data.careerHistory} />
                     break
                 case ('contact'):
-                    // console.log(this.state.data.contact.email)
                     pageType = <Contact contact={this.state.data.contact}/>
                     break
                 default:
@@ -85,7 +84,7 @@ export default class App extends React.Component {
                     <Background>
                         <Switch>
                             {/* Conditionally render routeLinks once data has been loaded */}
-                            {this.state && this.state.data && routeLinks}
+                            {this.state.data && routeLinks}
                             <Route
                                 path="/"
                                 render={() => <RouteWrapper marginLeft ><Intro /></RouteWrapper>}

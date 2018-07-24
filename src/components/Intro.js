@@ -39,7 +39,7 @@ const Nav = styled(Link)`
 const Intro = () => (
     <Fragment>
         <Nav to="/about">HI MY NAME IS RICHARD</Nav>
-        <Nav to="/work">I'M A SOFTWARE ENGINEER</Nav>
+        <Nav to="/experience">I'M A SOFTWARE ENGINEER</Nav>
         <Nav to="/contact">PLEASE GET IN TOUCH</Nav>
     </Fragment>
 )
