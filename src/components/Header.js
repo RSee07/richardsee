@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -100,21 +100,19 @@ export default class Header extends React.Component {
         })
 
         return(
-            <Fragment>
-                <Head>
-                    <DropdownWrapper>
-                        <DropdownButton onClick={this.toggleDropdown}>RS</DropdownButton>
-                    </DropdownWrapper>
-                    {
-                        this.state.openDropdown && 
-                        <nav>
-                            <ListWrapper>
-                                {links}
-                            </ListWrapper>
-                        </nav>
-                    }
-                </Head>
-            </Fragment>
+            <Head>
+                <DropdownWrapper>
+                    <DropdownButton onClick={this.toggleDropdown}>RS</DropdownButton>
+                </DropdownWrapper>
+                {
+                    this.state.openDropdown && 
+                    <nav>
+                        <ListWrapper>
+                            {links}
+                        </ListWrapper>
+                    </nav>
+                }
+            </Head>
         )
     }
 }
