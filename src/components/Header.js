@@ -75,6 +75,9 @@ const Nav = styled(NavLink)`
     }
 `
 
+// Declare pages
+const pages = ['', 'Experience', 'About', 'Contact']
+
 export default class Header extends React.Component {
     state = {
         openDropdown: false,
@@ -89,6 +92,12 @@ export default class Header extends React.Component {
     }
 
     render() {
+        const links = pages.map(page => {
+            const to = `/${page.toLowerCase()}`
+            const title = (page === '') ? 'Home' : page
+            return <ListItem key={page}><Nav onClick={this.toggleDropdown} to={to}>{title}</Nav></ListItem>
+        })
+
         return(
             <Fragment>
                 <Head>
@@ -99,10 +108,7 @@ export default class Header extends React.Component {
                         this.state.openDropdown && 
                         <nav>
                             <ListWrapper>
-                                <ListItem><Nav onClick={this.toggleDropdown} to="/">Home</Nav></ListItem>
-                                <ListItem><Nav onClick={this.toggleDropdown} to="/work">Work</Nav></ListItem>
-                                <ListItem><Nav onClick={this.toggleDropdown} to="/about">About</Nav></ListItem>
-                                <ListItem><Nav onClick={this.toggleDropdown} to="/contact">Contact</Nav></ListItem>
+                                {links}
                             </ListWrapper>
                         </nav>
                     }
