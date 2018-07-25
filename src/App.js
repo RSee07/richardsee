@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import styled from 'styled-components'
 import personal from './static/data/personal.json'
-import Header from './components/Header'
+import Footer from './components/Footer'
 import Intro from './components/Intro'
 import Experience from './components/Experience'
 import About from './components/About'
@@ -73,7 +73,7 @@ export default class App extends React.Component {
             return (
                 <Route key={page}
                     path={path}
-                    render={() => <Fragment><Header /><RouteWrapper>{pageType}</RouteWrapper></Fragment>}
+                    render={() => <Fragment><RouteWrapper>{pageType}</RouteWrapper><Footer/></Fragment>}
                 />
             )
         })
