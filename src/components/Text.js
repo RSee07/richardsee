@@ -23,3 +23,13 @@ export const H4 = styled.h4`
     font-size: 18px;
     margin: 0;
 `
+
+export const P = styled.p`
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0;
+`
+
+export const Date = P.extend`
+    color: #ff6600;
+`
