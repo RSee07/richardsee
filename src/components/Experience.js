@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import Job from './Job'
-import * as Heading from './Heading'
+import * as Text from './Text'
 
 const Experience = (props) => (
     <Fragment>
-        <Heading.H1>Work</Heading.H1>
+        <Text.H1>Work</Text.H1>
         {/* <h3>{props.coreSkills}</h3> */}
-        <Heading.H2>Career History</Heading.H2>
+        <Text.H2>Career History</Text.H2>
         {props.careerHistory.map(job => {
             // Object destructuring
             const {title, company, work} = job

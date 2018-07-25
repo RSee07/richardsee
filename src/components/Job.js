@@ -1,11 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
 import Work from './Work'
+import * as Text from './Text'
 
 const Job = (props) => (
     <div>
-        <div>{props.title}</div>
-        <div>{props.company}</div>
+        <Text.H3>{props.title} | {props.company}</Text.H3>
         {props.work.map(work => {
             // Object destructuring
             const {title, date, description} = work
