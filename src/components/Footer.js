@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 const FooterWrapper = styled.footer`
     display: inline-block;
@@ -14,7 +15,7 @@ const Circle = styled.div`
     height: 60px;
     border-radius: 30px;
     background-color: #3C3C3C;
-    box-shadow: 2px 2px 40px #000000;
+    box-shadow: 2px 2px 20px 3px #000000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +29,7 @@ const Bar1 = styled.div`
     width: 35px;
     height: 5px;
     background-color: #ffffff;
-    transition: 0.4s;
+    transition: 0.3s;
     margin: auto;
     transform: ${prop => prop.open ? 'rotate(-45deg) translate(-8px, 7.5px)' : undefined};
 `
@@ -59,6 +60,58 @@ const DropdownButton = styled.button`
     }
 `
 
+const Nav = styled.nav`
+    position: absolute;
+    bottom: -5px;
+    right: 75px;
+    transition: 0.3s;
+    opacity: ${prop => prop.open ? '1' : '0'};
+    transform: ${prop => prop.open ? 'translate(0)' : 'translate(20px)'};
+`
+
+const ListWrapper = styled.ul`
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 150px;
+`
+
+const ListItem = styled.li`
+    display: inline-flex;
+    padding: 0;
+    margin: 7px 0;
+    width: 100%;
+    height: 40px;
+    background-color: #3C3C3C;
+    box-shadow: 2px 2px 10px 2px #000000;
+
+    @media (min-width: 1200px) {
+        height: 50px;
+    }
+`
+
+const Navlink = styled(NavLink)`
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    margin: auto;
+    transition: all .15s ease-in-out;
+
+    @media (min-width: 1200px) {
+        font-size: 28px;
+    }
+
+    &:hover {
+        transition: all .15s ease-in-out;
+        color: #ff6600;
+    }
+`
+
+// Declare pages
+const pages = ['', 'Experience', 'About', 'Contact']
+
 export default class Footer extends React.Component {
     state = {
         openDropdown: false,
@@ -73,6 +126,12 @@ export default class Footer extends React.Component {
     }
 
     render() {
+        const links = pages.map(page => {
+            const to = `/${page.toLowerCase()}`
+            const title = (page === '') ? 'Home' : page
+            return <ListItem key={page}><Navlink onClick={this.toggleDropdown} to={to}>{title}</Navlink></ListItem>
+        })
+
         return(
             <FooterWrapper>
                 <Circle>
@@ -83,6 +142,11 @@ export default class Footer extends React.Component {
                     </BarWrapper>
                 </Circle>
                 <DropdownButton onClick={this.toggleDropdown} />
+                <Nav open={this.state.openDropdown}>
+                    <ListWrapper>
+                        {links}
+                    </ListWrapper>
+                </Nav>
             </FooterWrapper>
         )
     }

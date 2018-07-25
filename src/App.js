@@ -13,7 +13,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 
 const RouteWrapper = styled.div`
-    margin: 60px 20px 0;
+    margin: 60px 20px 90px;
 `
 
 const RouteWrapperHome = styled.div`
