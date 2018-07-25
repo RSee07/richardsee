@@ -34,6 +34,9 @@ const RouteWrapper = styled.div`
     }
 `
 
+// Declare pages
+const pages = ['about', 'experience', 'contact']
+
 export default class App extends React.Component {
     // State definition
     state = {
@@ -48,10 +51,8 @@ export default class App extends React.Component {
     }
 
     render() {
-        // Declare pages
-        const pages = ['about', 'experience', 'contact']
-
         // Loop through pages and generate Route for each
+        // Figure out how to only render once
         const routeLinks = pages.map(page => {
             const path = '/' + page
             let pageType
