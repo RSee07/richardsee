@@ -12,17 +12,17 @@ const Bar1 = styled.div`
     height: 5px;
     background-color: #ffffff;
     transition: 0.4s;
-    transform: ${prop => prop.open ? 'rotate(-45deg) translate(-9px, 9px)' : undefined};
+    transform: ${prop => prop.open ? 'rotate(-45deg) translate(-8px, 7.5px)' : undefined};
 `
 
 const Bar2 = Bar1.extend`
-    margin: 8px 0;
+    margin: 6px 0;
     transform: none;
     opacity: ${prop => prop.open ? '0' : '1'};
 `
 
 const Bar3 = Bar1.extend`
-    transform: ${prop => prop.open ? 'rotate(45deg) translate(-9px, -9px)' : undefined};
+    transform: ${prop => prop.open ? 'rotate(45deg) translate(-7.5px, -8px)' : undefined};
 `
 
 const DropdownButton = styled.button`
