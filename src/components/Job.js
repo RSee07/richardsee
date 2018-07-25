@@ -7,7 +7,9 @@ const Job = (props) => (
         <div>{props.title}</div>
         <div>{props.company}</div>
         {props.work.map(work => {
-            return <Work key={work.title} title={work.title} date={work.date} description={work.description} />
+            // Object destructuring
+            const {title, date, description} = work
+            return <Work key={title} title={title} date={date} description={description} />
         })}
     </div>
 )
