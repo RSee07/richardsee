@@ -12,25 +12,24 @@ import Experience from './components/Experience'
 import About from './components/About'
 import Contact from './components/Contact'
 
-const Background = styled.div`
-    height: 100vh;
-    width: 100vw;
-    background-color: #282828;
+const RouteWrapper = styled.div`
+    margin: 60px 20px 0;
 `
 
-const RouteWrapper = styled.div`
-    height: 100%;
-    margin-left: ${prop => prop.marginLeft ? "20px" : "0"};
+const RouteWrapperHome = styled.div`
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 20px;
 
     @media (min-width: 600px) {
-        margin-left: ${prop => prop.marginLeft ? "40px" : "0"};
+        margin-left: 40px;
     }
 
     @media (min-width: 1200px) {
-        margin-left: ${prop => prop.marginLeft ? "100px" : "0"};
+        margin-left: 100px;
     }
 `
 
@@ -81,18 +80,14 @@ export default class App extends React.Component {
 
         return (
             <BrowserRouter>
-                <Fragment>
-                    <Background>
-                        <Switch>
-                            {/* Conditionally render routeLinks once data has been loaded */}
-                            {this.state.data && routeLinks}
-                            <Route
-                                path="/"
-                                render={() => <RouteWrapper marginLeft ><Intro /></RouteWrapper>}
-                            />
-                        </Switch>
-                    </Background>
-                </Fragment>
+                <Switch>
+                    {/* Conditionally render routeLinks once data has been loaded */}
+                    {this.state.data && routeLinks}
+                    <Route
+                        path="/"
+                        render={() => <RouteWrapperHome marginLeft ><Intro /></RouteWrapperHome>}
+                    />
+                </Switch>
             </BrowserRouter>
         )
     }

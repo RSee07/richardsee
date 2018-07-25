@@ -6,6 +6,7 @@ const Head = styled.header`
     position: fixed;
     width: 100%;
     height: 40px;
+    top: 0;
     z-index: 1;
     background-color: #020202;
     box-shadow: 0px 0px 8px 2px #000000;
