@@ -5,7 +5,8 @@ import * as Text from './Text'
 const Wrapper = styled.div`
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #323232;
+    border-radius: 5px;
+    background-color: #424242;
     box-shadow: 1px 6px 10px #000000;
 `
 

@@ -14,8 +14,8 @@ const Circle = styled.div`
     width: 60px;
     height: 60px;
     border-radius: 30px;
-    background-color: #3C3C3C;
-    box-shadow: 2px 2px 20px 3px #000000;
+    background-color: #5B5B5B;
+    box-shadow: 0 0 10px 3px #000000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,7 +82,7 @@ const ListItem = styled.li`
     margin: 7px 0;
     width: 100%;
     height: 40px;
-    background-color: #3C3C3C;
+    background-color: #5B5B5B;
     box-shadow: 2px 2px 10px 2px #000000;
 
     @media (min-width: 1200px) {
@@ -116,7 +116,7 @@ export default class Footer extends React.Component {
     state = {
         openDropdown: false,
     }
-    
+
     toggleDropdown = () => {
         this.setState(prevState => ({
             openDropdown: !prevState.openDropdown
