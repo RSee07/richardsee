@@ -2,14 +2,10 @@ import React from 'react'
 import Work from './Work'
 import * as Text from './Text'
 
-const Job = (props) => (
+const Job = ({ title, company, work }) => (
     <div>
-        <Text.H3>{props.title} | {props.company}</Text.H3>
-        {props.work.map(work => {
-            // Object destructuring
-            const {title, date, description} = work
-            return <Work key={title} title={title} date={date} description={description} />
-        })}
+        <Text.H3>{title} | {company}</Text.H3>
+        {work.map(({title, date, description}) => <Work key={title} title={title} date={date} description={description} />)}
     </div>
 )
 

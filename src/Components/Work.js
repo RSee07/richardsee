@@ -22,15 +22,11 @@ const Point = styled.li`
     margin: 0;
 `
 
-const Work = (props) => (
+const Work = ({ title, date, description }) => (
     <Wrapper>
-        <Text.H4>{props.title}</Text.H4>
-        <Text.Date>{props.date}</Text.Date>
-        <List>
-            {props.description.map((point, i) => {
-                return <Point key={i} >{point}</Point>
-            })}
-        </List>
+        <Text.H4>{title}</Text.H4>
+        <Text.Date>{date}</Text.Date>
+        <List>{description.map((point, i) => <Point key={i} >{point}</Point> )}</List>
     </Wrapper>
 )
 
