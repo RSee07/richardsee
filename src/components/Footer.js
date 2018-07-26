@@ -116,10 +116,8 @@ export default class Footer extends React.Component {
     state = {
         openDropdown: false,
     }
-
-    toggleDropdown = this.toggleDropdown.bind(this)
-
-    toggleDropdown() {
+    
+    toggleDropdown = () => {
         this.setState(prevState => ({
             openDropdown: !prevState.openDropdown
         }))
