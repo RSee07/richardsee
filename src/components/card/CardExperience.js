@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card } from './CardBase'
+import CardBase from './CardBase'
 import * as Text from '../Text'
 
 const List = styled.ul`
@@ -17,11 +17,11 @@ const Point = styled.li`
 `
 
 const CardExperience = ({ title, date, description }) => (
-    <Card>
+    <CardBase>
         <Text.H4>{title}</Text.H4>
         <Text.Date>{date}</Text.Date>
         <List>{description.map((point, i) => <Point key={i} >{point}</Point> )}</List>
-    </Card>
+    </CardBase>
 )
 
 export default CardExperience
