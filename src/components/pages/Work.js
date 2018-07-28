@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Job from './Job'
-import * as Text from './Text'
+import * as Text from '../Text'
 
 const Work = ({ coreSkills, careerHistory }) => (
     <Fragment>

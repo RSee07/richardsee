@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import me from '../static/media/me.png'
+import me from '../../static/media/me.png'
 
 const Hero = styled.img`
     height: 220px;

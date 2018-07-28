@@ -7,10 +7,10 @@ import {
 import styled from 'styled-components'
 import personal from './static/data/personal.json'
 import Footer from './components/Footer'
-import Intro from './components/Intro'
-import Work from './components/Work'
-import About from './components/About'
-import Contact from './components/Contact'
+import Intro from './components/pages/Intro'
+import Work from './components/pages/Work'
+import About from './components/pages/About'
+import Contact from './components/pages/Contact'
 
 const RouteWrapper = styled.div`
     margin: 60px 20px 90px;
