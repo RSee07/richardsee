@@ -110,7 +110,7 @@ const Navlink = styled(NavLink)`
 `
 
 // Declare pages
-const pages = ['', 'Experience', 'About', 'Contact']
+const pages = ['', 'Work', 'About', 'Contact']
 
 export default class Footer extends React.Component {
     state = {

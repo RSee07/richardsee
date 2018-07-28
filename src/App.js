@@ -8,7 +8,7 @@ import styled from 'styled-components'
 import personal from './static/data/personal.json'
 import Footer from './components/Footer'
 import Intro from './components/Intro'
-import Experience from './components/Experience'
+import Work from './components/Work'
 import About from './components/About'
 import Contact from './components/Contact'
 
@@ -34,7 +34,7 @@ const RouteWrapperHome = styled.div`
 `
 
 // Declare pages
-const pages = ['about', 'experience', 'contact']
+const pages = ['about', 'work', 'contact']
 
 export default class App extends React.Component {
     // State definition
@@ -60,8 +60,8 @@ export default class App extends React.Component {
                 case ('about'):
                     pageType = <About page="About page" />
                     break
-                case ('experience'):
-                    pageType = <Experience coreSkills={this.state.data.coreSkills} careerHistory={this.state.data.careerHistory} />
+                case ('work'):
+                    pageType = <Work coreSkills={this.state.data.coreSkills} careerHistory={this.state.data.careerHistory} />
                     break
                 case ('contact'):
                     pageType = <Contact contact={this.state.data.contact}/>
