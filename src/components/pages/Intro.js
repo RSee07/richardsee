@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { color } from '../Helper'
 
 const Nav = styled(Link)`
     margin: 10px 0;
-    color: #ffffff;
+    color: ${color.white};
     display: block;
     text-decoration: none;
     font-size: 20px;
@@ -32,7 +33,7 @@ const Nav = styled(Link)`
 
     &:hover {
         transition: all .15s ease-in-out;
-        color: #ff6600;
+        color: ${color.orange};
     }
 `
 

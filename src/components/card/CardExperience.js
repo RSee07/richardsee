@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import CardBase from './CardBase'
 import * as Text from '../Text'
+import { color } from '../Helper'
 
 const List = styled.ul`
     margin: 0;
@@ -11,7 +12,7 @@ const List = styled.ul`
 const Point = styled.li`
     list-style-type: square;
     padding-top: 20px;
-    color: #ffffff;
+    color: ${color.white};
     font-size: 16px;
     margin: 0;
 `

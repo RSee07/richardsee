@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import { color } from '../Helper'
 
 const Link = styled.a`
-    color: #ffffff;
+    color: ${color.white};
     margin: 20px;
     display: block;
     font-size: 30px;
@@ -11,7 +12,7 @@ const Link = styled.a`
 
     &:hover {
         transition: all .15s ease-in-out;
-        color: #ff6600;
+        color: ${color.orange};
     }
 `
 const Contact = (props) => (

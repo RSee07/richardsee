@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import { color } from './Helper'
 
 const FooterWrapper = styled.footer`
     display: inline-block;
@@ -14,8 +15,8 @@ const Circle = styled.div`
     width: 60px;
     height: 60px;
     border-radius: 30px;
-    background-color: #5B5B5B;
-    box-shadow: 0 0 10px 3px #000000;
+    background-color: ${color.footerGrey};
+    box-shadow: 0 0 10px 3px ${color.black};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +29,7 @@ const BarWrapper = styled.div`
 const Bar1 = styled.div`
     width: 35px;
     height: 5px;
-    background-color: #ffffff;
+    background-color: ${color.white};
     transition: 0.3s;
     margin: auto;
     transform: ${prop => prop.open ? 'rotate(-45deg) translate(-8px, 7.5px)' : undefined};
@@ -82,8 +83,8 @@ const ListItem = styled.li`
     margin: 7px 0;
     width: 100%;
     height: 40px;
-    background-color: #5B5B5B;
-    box-shadow: 2px 2px 10px 2px #000000;
+    background-color: ${color.footerGrey};
+    box-shadow: 2px 2px 10px 2px ${color.black};
 
     @media (min-width: 1200px) {
         height: 50px;
@@ -93,7 +94,7 @@ const ListItem = styled.li`
 const Navlink = styled(NavLink)`
     width: 100%;
     text-align: center;
-    color: #ffffff;
+    color: ${color.white};
     text-decoration: none;
     font-size: 20px;
     margin: auto;
@@ -105,7 +106,7 @@ const Navlink = styled(NavLink)`
 
     &:hover {
         transition: all .15s ease-in-out;
-        color: #ff6600;
+        color: ${color.orange};
     }
 `
 
