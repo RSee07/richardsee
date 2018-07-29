@@ -11,7 +11,7 @@ import Intro from './components/pages/Intro'
 import Work from './components/pages/Work'
 import About from './components/pages/About'
 import Contact from './components/pages/Contact'
-import circle from './static/media/circle.jpg'
+import { color } from './components/Helper'
 
 // Inject styles directly. Cannot apply styled component to body so inject directly
 injectGlobal`
@@ -19,8 +19,14 @@ injectGlobal`
         margin: 0;
         padding: 0;
         font-family: sans-serif;
-        background-color: #282828;
-        background-image: url(${circle});
+        background: ${color.black};  /* Fallback for old browsers */
+
+        background:
+            linear-gradient(135deg, hsla(287.55, 0%, 0%, 1) 0%, hsla(287.55, 0%, 0%, 0) 70%),
+            linear-gradient(25deg, hsla(23.77, 98.65%, 29.08%, 1) 10%, hsla(23.77, 98.65%, 29.08%, 0) 80%),
+            linear-gradient(315deg, hsla(281.89, 79.63%, 32.15%, 1) 15%, hsla(281.89, 79.63%, 32.15%, 0) 80%),
+            linear-gradient(245deg, hsla(273.92, 0%, 0%, 1) 100%, hsla(273.92, 0%, 0%, 0) 70%);
+        background-size: cover;
         background-position: 50% 50%;
         background-size: cover;
         background-repeat: no-repeat;
