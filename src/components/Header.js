@@ -1,26 +1,48 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
+import { color } from './Helper'
 
-const Head = styled.header`
+const HeaderWrapper = styled.header`
+    display: inline-block;
     position: fixed;
-    width: 100%;
-    height: 40px;
-    top: 0;
     z-index: 1;
-    background-color: #020202;
-    box-shadow: 0px 0px 8px 2px #000000;
+    top: 15px;
+    right: 15px;
 `
 
-const DropdownWrapper = styled.div`
-    width: 40px;
-    height: 40px;
-    margin: auto;
-    background-color: yellow;
+const Circle = styled.div`
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: ${color.headerGrey};
+    box-shadow: 0 0 10px 3px ${color.black};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
 
-    &:focus {
-        outline: none;
-    }
+const BarWrapper = styled.div`
+    margin-bottom: 1px;
+`
+
+const Bar1 = styled.div`
+    width: 35px;
+    height: 5px;
+    background-color: ${color.white};
+    transition: 0.3s;
+    margin: auto;
+    transform: ${prop => prop.open ? 'rotate(-45deg) translate(-8px, 7.5px)' : undefined};
+`
+
+const Bar2 = Bar1.extend`
+    margin: 6px auto;
+    transform: none;
+    opacity: ${prop => prop.open ? '0' : '1'};
+`
+
+const Bar3 = Bar1.extend`
+    transform: ${prop => prop.open ? 'rotate(45deg) translate(-7.5px, -8px)' : undefined};
 `
 
 const DropdownButton = styled.button`
@@ -28,6 +50,8 @@ const DropdownButton = styled.button`
     height: 100%;
     padding: 0;
     margin: 0;
+    position: absolute;
+    top: 0;
     background-color: inherit;
     border: none;
     cursor: pointer;
@@ -37,30 +61,40 @@ const DropdownButton = styled.button`
     }
 `
 
+const Nav = styled.nav`
+    position: absolute;
+    top: -5px;
+    right: 75px;
+    transition: 0.3s;
+    opacity: ${prop => prop.open ? '1' : '0'};
+    transform: ${prop => prop.open ? 'translate(0)' : 'translate(20px)'};
+`
+
 const ListWrapper = styled.ul`
     list-style-type: none;
     padding: 0;
     margin: 0;
-    background-color: #020202;
-    box-shadow: 0px 0px 8px 2px #000000;
+    width: 150px;
 `
 
 const ListItem = styled.li`
     display: inline-flex;
     padding: 0;
+    margin: 7px 0;
     width: 100%;
     height: 40px;
-    border-top: white 1px solid;
+    background-color: ${color.headerGrey};
+    box-shadow: 2px 2px 10px 2px ${color.black};
 
     @media (min-width: 1200px) {
         height: 50px;
     }
 `
 
-const Nav = styled(NavLink)`
+const Navlink = styled(NavLink)`
     width: 100%;
     text-align: center;
-    color: #ffffff;
+    color: ${color.white};
     text-decoration: none;
     font-size: 20px;
     margin: auto;
@@ -72,21 +106,19 @@ const Nav = styled(NavLink)`
 
     &:hover {
         transition: all .15s ease-in-out;
-        color: #ff6600;
+        color: ${color.orange};
     }
 `
 
 // Declare pages
-const pages = ['', 'Experience', 'About', 'Contact']
+const pages = ['', 'Work', 'About', 'Contact']
 
 export default class Header extends React.Component {
     state = {
         openDropdown: false,
     }
 
-    toggleDropdown = this.toggleDropdown.bind(this)
-
-    toggleDropdown() {
+    toggleDropdown = () => {
         this.setState(prevState => ({
             openDropdown: !prevState.openDropdown
         }))
@@ -96,23 +128,25 @@ export default class Header extends React.Component {
         const links = pages.map(page => {
             const to = `/${page.toLowerCase()}`
             const title = (page === '') ? 'Home' : page
-            return <ListItem key={page}><Nav onClick={this.toggleDropdown} to={to}>{title}</Nav></ListItem>
+            return <ListItem key={page}><Navlink onClick={this.toggleDropdown} to={to}>{title}</Navlink></ListItem>
         })
 
         return(
-            <Head>
-                <DropdownWrapper>
-                    <DropdownButton onClick={this.toggleDropdown}>RS</DropdownButton>
-                </DropdownWrapper>
-                {
-                    this.state.openDropdown && 
-                    <nav>
-                        <ListWrapper>
-                            {links}
-                        </ListWrapper>
-                    </nav>
-                }
-            </Head>
+            <HeaderWrapper>
+                <Circle>
+                    <BarWrapper>
+                        <Bar1 open={this.state.openDropdown}></Bar1>
+                        <Bar2 open={this.state.openDropdown}></Bar2>
+                        <Bar3 open={this.state.openDropdown}></Bar3>
+                    </BarWrapper>
+                </Circle>
+                <DropdownButton onClick={this.toggleDropdown} />
+                <Nav open={this.state.openDropdown}>
+                    <ListWrapper>
+                        {links}
+                    </ListWrapper>
+                </Nav>
+            </HeaderWrapper>
         )
     }
 }

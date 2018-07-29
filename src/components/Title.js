@@ -4,7 +4,8 @@ import { color } from './Helper'
 import * as Text from './Text'
 
 export const AfterTitleWrapper = styled.div`
-    margin: 20px 20px 0;
+    padding: 20px;
+    box-sizing: border-box;
     min-height: 100vh;
 `
 
@@ -17,7 +18,7 @@ const TitleOuter = styled.div`
 
 const TitleInner = styled.div`
     width: 100%;
-    height: calc(100% - 100px);
+    height: 100%;
     box-sizing: border-box;
     display: flex;
     align-items: center;

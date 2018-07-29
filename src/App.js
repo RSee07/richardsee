@@ -7,7 +7,7 @@ import {
 import styled, { injectGlobal } from 'styled-components'
 import ScrollToTop from './components/ScrollToTop'
 import personal from './static/data/personal.json'
-import Footer from './components/Footer'
+import Header from './components/Header'
 import Intro from './components/pages/Intro'
 import Work from './components/pages/Work'
 import About from './components/pages/About'
@@ -92,7 +92,7 @@ export default class App extends React.Component {
             return (
                 <Route key={page}
                     path={path}
-                    render={() => <Fragment>{pageType}<Footer/></Fragment>}
+                    render={() => <Fragment><Header/>{pageType}</Fragment>}
                 />
             )
         })
