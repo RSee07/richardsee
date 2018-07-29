@@ -34,10 +34,6 @@ injectGlobal`
     }
 `
 
-const RouteWrapper = styled.div`
-    margin: 60px 20px 90px;
-`
-
 const RouteWrapperHome = styled.div`
     height: 100vh;
     width: 100vw;
@@ -95,7 +91,7 @@ export default class App extends React.Component {
             return (
                 <Route key={page}
                     path={path}
-                    render={() => <Fragment><RouteWrapper>{pageType}</RouteWrapper><Footer/></Fragment>}
+                    render={() => <Fragment>{pageType}<Footer/></Fragment>}
                 />
             )
         })

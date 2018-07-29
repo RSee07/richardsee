@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import Title, { AfterTitleWrapper } from '../Title'
 import { CardBaseList } from '../card/CardBase'
 import * as Text from '../Text'
 import { color } from '../Helper'
@@ -28,12 +29,14 @@ const Icon = styled(FontAwesomeIcon)`
 
 const Contact = ({ email, mobile, linkedIn, facebook, instagram }) => (
     <Fragment>
-        <Text.H1>Contact</Text.H1>
-        <CardBaseList><Link href={"mailto:" + email + "?subject=Enquiries"}>{email}</Link><Icon icon={faEnvelopeSquare} /></CardBaseList>
-        <CardBaseList><Link href={"tel:" + mobile}>{mobile}</Link><Icon icon={faPhoneSquare} /></CardBaseList>
-        <CardBaseList><Link target="_blank" rel="noopener noreferrer" href={linkedIn}>richard-see</Link><Icon icon={faLinkedin} /></CardBaseList>
-        <CardBaseList><Link target="_blank" rel="noopener noreferrer" href={facebook}>richardcysee</Link><Icon icon={faFacebook} /></CardBaseList>
-        <CardBaseList><Link target="_blank" rel="noopener noreferrer" href={instagram}>richard_cy_see</Link><Icon icon={faInstagram} /></CardBaseList>
+        <Title>Contact</Title>
+        <AfterTitleWrapper>
+            <CardBaseList><Link href={"mailto:" + email + "?subject=Enquiries"}>{email}</Link><Icon icon={faEnvelopeSquare} /></CardBaseList>
+            <CardBaseList><Link href={"tel:" + mobile}>{mobile}</Link><Icon icon={faPhoneSquare} /></CardBaseList>
+            <CardBaseList><Link target="_blank" rel="noopener noreferrer" href={linkedIn}>richard-see</Link><Icon icon={faLinkedin} /></CardBaseList>
+            <CardBaseList><Link target="_blank" rel="noopener noreferrer" href={facebook}>richardcysee</Link><Icon icon={faFacebook} /></CardBaseList>
+            <CardBaseList><Link target="_blank" rel="noopener noreferrer" href={instagram}>richard_cy_see</Link><Icon icon={faInstagram} /></CardBaseList>
+        </AfterTitleWrapper>
     </Fragment>
 )
 

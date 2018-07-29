@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import Title, { AfterTitleWrapper } from '../Title'
 import CardBase from '../card/CardBase'
 import * as Text from '../Text'
 import me from '../../static/media/me.png'
@@ -36,13 +37,15 @@ const Hero = styled.img`
 
 const About = (props) => (
     <Fragment>
-        <Text.H1>About</Text.H1>
-        <CardBase>
-            <Hero src={me} />
-        </CardBase>
-        <CardBase>
-            <Text.P>Hey this is me</Text.P>
-        </CardBase>
+        <Title>About</Title>
+        <AfterTitleWrapper>
+            <CardBase>
+                <Hero src={me} />
+            </CardBase>
+            <CardBase>
+                <Text.P>Hey this is me</Text.P>
+            </CardBase>
+        </AfterTitleWrapper>
     </Fragment>
 )
 

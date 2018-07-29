@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { color } from './Helper'
 
 export const H1 = styled.h1`
-    color: ${color.orange};
+    color: ${color.white};
     font-size: 40px;
     text-shadow: 4px 4px 10px #000000;
 `
