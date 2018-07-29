@@ -1,27 +1,26 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import { CardBaseList } from '../card/CardBase'
+import * as Text from '../Text'
 import { color } from '../Helper'
 
 const Link = styled.a`
     color: ${color.white};
-    margin: 20px;
+    margin: 0;
     display: block;
     font-size: 30px;
     text-decoration: none;
-    transition: all .15s ease-in-out;
 
-    &:hover {
-        transition: all .15s ease-in-out;
-        color: ${color.orange};
-    }
 `
-const Contact = (props) => (
+
+const Contact = ({ email, mobile, linkedIn, facebook, instagram }) => (
     <Fragment>
-        <Link href={"mailto:" + props.contact.email + "?subject=Enquiries"}>Email</Link>
-        <Link href={"tel:" + props.contact.mobile}>Mobile</Link>
-        <Link target="_blank" rel="noopener noreferrer" href={props.contact.linkedIn}>LinkedIn</Link>
-        <Link target="_blank" rel="noopener noreferrer" href={props.contact.facebook}>Facebook</Link>
-        <Link target="_blank" rel="noopener noreferrer" href={props.contact.instagram}>Instagram</Link>
+        <Text.H1>Contact</Text.H1>
+        <CardBaseList><Link href={"mailto:" + email + "?subject=Enquiries"}>Email</Link></CardBaseList>
+        <CardBaseList><Link href={"tel:" + mobile}>Mobile</Link></CardBaseList>
+        <CardBaseList><Link target="_blank" rel="noopener noreferrer" href={linkedIn}>LinkedIn</Link></CardBaseList>
+        <CardBaseList><Link target="_blank" rel="noopener noreferrer" href={facebook}>Facebook</Link></CardBaseList>
+        <CardBaseList><Link target="_blank" rel="noopener noreferrer" href={instagram}>Instagram</Link></CardBaseList>
     </Fragment>
 )
 

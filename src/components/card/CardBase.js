@@ -9,4 +9,8 @@ export const CardBase = styled.div`
     box-shadow: 1px 6px 10px ${color.black};
 `
 
+export const CardBaseList = CardBase.withComponent('li').extend`
+    list-style-type: none;
+`
+
 export default CardBase

@@ -64,7 +64,7 @@ export default class App extends React.Component {
                     pageType = <Work coreSkills={this.state.data.coreSkills} careerHistory={this.state.data.careerHistory} />
                     break
                 case ('contact'):
-                    pageType = <Contact contact={this.state.data.contact}/>
+                    pageType = <Contact {...this.state.data.contact}/>
                     break
                 default:
                     break
