@@ -36,12 +36,13 @@ injectGlobal`
 `
 
 const RouteWrapperHome = styled.div`
-    height: 100vh;
     width: 100vw;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 20px;
+    padding-top: calc(100vh / 2.7);
+    padding-left: 20px;
 
     @media (min-width: 600px) {
         margin-left: 40px;

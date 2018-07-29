@@ -28,5 +28,5 @@ export const P = styled.p`
 `
 
 export const Date = P.extend`
-    color: ${color.orange};
+    color: ${color.white};
 `
