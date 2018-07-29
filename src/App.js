@@ -5,6 +5,7 @@ import {
     Switch
 } from 'react-router-dom'
 import styled, { injectGlobal } from 'styled-components'
+import ScrollToTop from './components/ScrollToTop'
 import personal from './static/data/personal.json'
 import Footer from './components/Footer'
 import Intro from './components/pages/Intro'
@@ -98,14 +99,16 @@ export default class App extends React.Component {
 
         return (
             <BrowserRouter>
-                <Switch>
-                    {/* Conditionally render routeLinks once data has been loaded */}
-                    {this.state.data && routeLinks}
-                    <Route
-                        path="/"
-                        render={() => <RouteWrapperHome marginLeft ><Intro /></RouteWrapperHome>}
-                    />
-                </Switch>
+                <ScrollToTop>
+                    <Switch>
+                        {/* Conditionally render routeLinks once data has been loaded */}
+                        {this.state.data && routeLinks}
+                        <Route
+                            path="/"
+                            render={() => <RouteWrapperHome marginLeft ><Intro /></RouteWrapperHome>}
+                        />
+                    </Switch>
+                </ScrollToTop>
             </BrowserRouter>
         )
     }
