@@ -13,15 +13,13 @@ const Point = styled.li`
     list-style-type: square;
     padding-top: 20px;
     color: ${color.white};
-    font-size: 16px;
-    margin: 0;
 `
 
 const CardExperience = ({ title, date, description }) => (
     <CardBase>
         <Text.H4>{title}</Text.H4>
         <Text.Date>{date}</Text.Date>
-        <List>{description.map((point, i) => <Point key={i} >{point}</Point> )}</List>
+        <List>{description.map((point, i) => <Point key={i} ><Text.P>{point}</Text.P></Point> )}</List>
     </CardBase>
 )
 
