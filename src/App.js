@@ -4,13 +4,29 @@ import {
     Route,
     Switch
 } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, { injectGlobal } from 'styled-components'
 import personal from './static/data/personal.json'
 import Footer from './components/Footer'
 import Intro from './components/pages/Intro'
 import Work from './components/pages/Work'
 import About from './components/pages/About'
 import Contact from './components/pages/Contact'
+import circle from './static/media/circle.jpg'
+
+// Inject styles directly. Cannot apply styled component to body so inject directly
+injectGlobal`
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #282828;
+        background-image: url(${circle});
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+`
 
 const RouteWrapper = styled.div`
     margin: 60px 20px 90px;
