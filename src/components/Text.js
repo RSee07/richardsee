@@ -7,21 +7,17 @@ export const H1 = styled.h1`
     text-shadow: 4px 4px 10px #000000;
 `
 
-export const H2 = styled.h2`
-    color: ${color.orange};
+export const H2 = H1.withComponent('h2').extend`
     font-size: 32px;
-    text-shadow: 4px 4px 10px #000000;
 `
 
-export const H3 = styled.h3`
-    color: ${color.orange};
+export const H3 = H1.withComponent('h3').extend`
     font-size: 22px;
-    text-shadow: 4px 4px 10px #000000;
 `
 
-export const H4 = styled.h4`
-    color: ${color.orange};
+export const H4 = H1.withComponent('h4').extend`
     font-size: 18px;
+    text-shadow: none;
     margin: 0;
 `
 
