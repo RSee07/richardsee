@@ -11,6 +11,9 @@ export const CardBase = styled.div`
 
 export const CardBaseList = CardBase.withComponent('li').extend`
     list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 `
 
 export default CardBase
