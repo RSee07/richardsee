@@ -14,8 +14,10 @@ const HeaderWrapper = styled.header`
 const Circle = styled.div`
     width: 60px;
     height: 60px;
+    box-sizing: border-box;
     border-radius: 30px;
-    background-color: ${color.headerGrey};
+    border: 2px solid ${color.white};
+    background: ${color.background};
     box-shadow: 0 0 10px 3px ${color.black};
     display: flex;
     align-items: center;
@@ -83,7 +85,7 @@ const ListItem = styled.li`
     margin: 7px 0;
     width: 100%;
     height: 40px;
-    background-color: ${color.headerGrey};
+    background: ${color.background};
     box-shadow: 2px 2px 10px 2px ${color.black};
 
     @media (min-width: 1200px) {
