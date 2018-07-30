@@ -1,22 +1,36 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { P } from '../Text'
 import { color } from '../Helper'
 
+const Wrapper = styled.div`
+    width: 100vw;
+    box-sizing: border-box;
+    padding-top: calc(100vh / 5.5);
+    padding-left: 30px;
+
+    @media (min-width: 400px) {
+        padding-left: 50px;
+    }
+`
+
 const Nav = styled(Link)`
-    margin: 10px 0;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 0 20px;
     color: ${color.white};
     display: block;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 40px;
+    line-height: 1.2;
     transition: all .15s ease-in-out;
 
     @media (min-width: 375px) {
-        font-size: 23px;
+        font-size: 46px;
     }
 
-    @media (min-width: 414px) {
-        font-size: 26px;
+    @media (min-width: 400px) {
+        font-size: 50px;
     }
 
     @media (min-width: 600px) {
@@ -37,12 +51,25 @@ const Nav = styled(Link)`
     }
 `
 
+const IntroP = P.extend`
+    @media (min-width: 375px) {
+        font-size: 20px;
+    }
+
+    @media (min-width: 400px) {
+        font-size: 24px;
+    }
+`
+
 const Intro = () => (
-    <Fragment>
-        <Nav to="/about">HI MY NAME IS RICHARD</Nav>
-        <Nav to="/work">I'M A SOFTWARE ENGINEER</Nav>
-        <Nav to="/contact">PLEASE GET IN TOUCH</Nav>
-    </Fragment>
+    <Wrapper>
+        <IntroP>HI MY NAME IS</IntroP>
+        <Nav to="/about">RICHARD</Nav>
+        <IntroP>I'M A</IntroP>
+        <Nav to="/work">SOFTWARE ENGINEER</Nav>
+        <IntroP>LET'S</IntroP>
+        <Nav to="/contact">TALK</Nav>
+    </Wrapper>
 )
 
 export default Intro

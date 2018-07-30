@@ -30,24 +30,6 @@ injectGlobal`
     }
 `
 
-const RouteWrapperHome = styled.div`
-    width: 100vw;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: calc(100vh / 2.7);
-    padding-left: 20px;
-
-    @media (min-width: 600px) {
-        margin-left: 40px;
-    }
-
-    @media (min-width: 1200px) {
-        margin-left: 100px;
-    }
-`
-
 // Declare pages
 const pages = ['about', 'work', 'contact']
 
@@ -101,7 +83,7 @@ export default class App extends React.Component {
                         {this.state.data && routeLinks}
                         <Route
                             path="/"
-                            render={() => <RouteWrapperHome marginLeft ><Intro /></RouteWrapperHome>}
+                            render={() => <Intro />}
                         />
                     </Switch>
                 </ScrollToTop>

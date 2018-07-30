@@ -25,11 +25,12 @@ const Icon = styled(FontAwesomeIcon)`
 `
 
 const Link = styled.a`
+    font-family: 'Poppins', sans-serif;
     color: ${color.white};
     padding-left: 15px;
     margin: 0;
     display: block;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
 `
 
