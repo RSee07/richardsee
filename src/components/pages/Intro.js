@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import Arrow from '../Arrow'
 import { H1, P } from '../Text'
 import { color } from '../Helper'
 
@@ -57,14 +58,6 @@ const Text = H1.extend`
         transition: all .15s ease-in-out;
         color: ${color.orange};
     }
-`
-
-const Arrow = styled.div`
-    height: 15px;
-    width: 15px;
-    border: 1px solid ${color.white};
-    border-width: 3px 3px 0 0;
-    transform: rotate(45deg);
 `
 
 const IntroP = P.extend`
