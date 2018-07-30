@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { P } from '../Text'
+import { H1, P } from '../Text'
 import { color } from '../Helper'
 
 const Wrapper = styled.div`
@@ -16,14 +16,22 @@ const Wrapper = styled.div`
 `
 
 const Nav = styled(Link)`
-    font-family: 'Poppins', sans-serif;
-    margin: 0 0 20px;
-    color: ${color.white};
-    display: block;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
     text-decoration: none;
+`
+
+const Text = H1.extend`
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: ${color.white};
     font-size: 40px;
+    font-weight: normal;
     line-height: 1.2;
     transition: all .15s ease-in-out;
+    width: 80%;
+    text-shadow: none;
 
     @media (min-width: 375px) {
         font-size: 46px;
@@ -51,6 +59,14 @@ const Nav = styled(Link)`
     }
 `
 
+const Arrow = styled.div`
+    height: 15px;
+    width: 15px;
+    border: 1px solid ${color.white};
+    border-width: 3px 3px 0 0;
+    transform: rotate(45deg);
+`
+
 const IntroP = P.extend`
     @media (min-width: 375px) {
         font-size: 20px;
@@ -64,11 +80,20 @@ const IntroP = P.extend`
 const Intro = () => (
     <Wrapper>
         <IntroP>HI MY NAME IS</IntroP>
-        <Nav to="/about">RICHARD</Nav>
+        <Nav to="/about">
+            <Text>RICHARD</Text>
+            <Arrow/>
+        </Nav>
         <IntroP>I'M A</IntroP>
-        <Nav to="/work">SOFTWARE ENGINEER</Nav>
+        <Nav to="/work">
+            <Text>SOFTWARE ENGINEER</Text>
+            <Arrow/>
+        </Nav>
         <IntroP>LET'S</IntroP>
-        <Nav to="/contact">TALK</Nav>
+        <Nav to="/contact">
+            <Text>TALK</Text>
+            <Arrow/>
+        </Nav>
     </Wrapper>
 )
 
