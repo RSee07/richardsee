@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { color } from './Helper'
 
 export const H1 = styled.h1`
+    font-family: 'Poppins', sans-serif;
     color: ${color.white};
     font-size: 40px;
     text-shadow: 4px 4px 10px #000000;
@@ -22,6 +23,7 @@ export const H4 = H1.withComponent('h4').extend`
 `
 
 export const P = styled.p`
+    font-family: 'Poppins', sans-serif;
     color: ${color.white};
     font-size: 16px;
     margin: 0;

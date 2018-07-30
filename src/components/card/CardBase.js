@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 const Banner = styled.div`
     padding: 15px 20px;
     border-radius: 5px 5px 0 0;
-    background-color: rgba(255,255,255,0.12);
+    background-color: rgba(255, 255, 255, 0.12);
     border-bottom: 1px solid ${color.cardWhite};
     box-shadow: 0px 1px 1px ${color.black};
 `
