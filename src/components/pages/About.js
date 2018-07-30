@@ -39,10 +39,10 @@ const About = (props) => (
     <Fragment>
         <Title>About</Title>
         <AfterTitleWrapper>
-            <CardBase>
+            <CardBase noBanner>
                 <Hero src={me} />
             </CardBase>
-            <CardBase>
+            <CardBase noBanner>
                 <Text.P>Hey this is me</Text.P>
             </CardBase>
         </AfterTitleWrapper>

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import Title, { AfterTitleWrapper } from '../Title'
-import { CardBaseList } from '../card/CardBase'
+import CardBase from '../card/CardBase'
 import * as Text from '../Text'
 import { color } from '../Helper'
 // Explicit import as limited number of icons used.
@@ -14,12 +14,9 @@ import {
     faInstagram
 } from '@fortawesome/free-brands-svg-icons'
 
-const Link = styled.a`
-    color: ${color.white};
-    margin: 0;
-    display: block;
-    font-size: 18px;
-    text-decoration: none;
+const Content = styled.div`
+    display: flex;
+    align-items: center;
 `
 
 const Icon = styled(FontAwesomeIcon)`
@@ -27,15 +24,49 @@ const Icon = styled(FontAwesomeIcon)`
     font-size: 30px;
 `
 
+const Link = styled.a`
+    color: ${color.white};
+    padding-left: 15px;
+    margin: 0;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+`
+
 const Contact = ({ email, mobile, linkedIn, facebook, instagram }) => (
     <Fragment>
         <Title>Contact</Title>
         <AfterTitleWrapper>
-            <CardBaseList><Link href={"mailto:" + email + "?subject=Enquiries"}>{email}</Link><Icon icon={faEnvelopeSquare} /></CardBaseList>
-            <CardBaseList><Link href={"tel:" + mobile}>{mobile}</Link><Icon icon={faPhoneSquare} /></CardBaseList>
-            <CardBaseList><Link target="_blank" rel="noopener noreferrer" href={linkedIn}>richard-see</Link><Icon icon={faLinkedin} /></CardBaseList>
-            <CardBaseList><Link target="_blank" rel="noopener noreferrer" href={facebook}>richardcysee</Link><Icon icon={faFacebook} /></CardBaseList>
-            <CardBaseList><Link target="_blank" rel="noopener noreferrer" href={instagram}>richard_cy_see</Link><Icon icon={faInstagram} /></CardBaseList>
+            <CardBase title='Email'>
+                <Content>
+                    <Icon icon={faEnvelopeSquare}/>
+                    <Link href={"mailto:" + email + "?subject=Enquiries"}>{email}</Link>
+                </Content>
+            </CardBase>
+            <CardBase title='Mobile'>
+                <Content>
+                    <Icon icon={faPhoneSquare}/>
+                    <Link href={"tel:" + mobile}>{mobile}</Link>
+                </Content>
+            </CardBase>
+            <CardBase title='LinkedIn'>
+                <Content>
+                    <Icon icon={faLinkedin}/>
+                    <Link target="_blank" rel="noopener noreferrer" href={linkedIn}>richard-see</Link>
+                </Content>
+            </CardBase>
+            <CardBase title='Facebook'>
+                <Content>
+                    <Icon icon={faFacebook}/>
+                    <Link target="_blank" rel="noopener noreferrer" href={facebook}>richardcysee</Link>
+                </Content>
+            </CardBase>
+            <CardBase title='Instagram'>
+                <Content>
+                    <Icon icon={faInstagram}/>
+                    <Link target="_blank" rel="noopener noreferrer" href={instagram}>richard_cy_see</Link>
+                </Content>
+            </CardBase>
         </AfterTitleWrapper>
     </Fragment>
 )
