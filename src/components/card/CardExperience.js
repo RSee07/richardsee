@@ -16,7 +16,7 @@ const Point = styled.li`
 `
 
 const CardExperience = ({ title, date, description }) => (
-    <CardBase title={title} date={date}>
+    <CardBase work title={title} date={date}>
         <List>{description.map((point, i) => <Point key={i} ><Text.P>{point}</Text.P></Point> )}</List>
     </CardBase>
 )

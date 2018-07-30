@@ -19,7 +19,7 @@ const Banner = styled.div`
 `
 
 const Content = styled.div`
-    padding: 20px;
+    padding: ${prop => prop.work ? '20px 20px 40px' : '20px'};
 `
 
 const CardBase = ({noBanner, work, title, date, children}) => (
@@ -28,7 +28,7 @@ const CardBase = ({noBanner, work, title, date, children}) => (
             <Text.H4>{title}</Text.H4>
             {date && <Text.Date>{date}</Text.Date>}
         </Banner>}
-        <Content>
+        <Content work={work}>
             {children}
         </Content>
     </Wrapper>
