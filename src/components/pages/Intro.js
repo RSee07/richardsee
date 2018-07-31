@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import Arrow from '../Arrow'
+import { ArrowRight } from '../Arrow'
 import { H1, P } from '../Text'
 import { color } from '../Helper'
 
@@ -75,17 +75,17 @@ const Intro = () => (
         <IntroP>HI MY NAME IS</IntroP>
         <Nav to="/about">
             <Text>RICHARD</Text>
-            <Arrow/>
+            <ArrowRight/>
         </Nav>
         <IntroP>I'M A</IntroP>
         <Nav to="/work">
             <Text>SOFTWARE ENGINEER</Text>
-            <Arrow/>
+            <ArrowRight/>
         </Nav>
         <IntroP>LET'S</IntroP>
         <Nav to="/contact">
             <Text>TALK</Text>
-            <Arrow/>
+            <ArrowRight/>
         </Nav>
     </Wrapper>
 )
