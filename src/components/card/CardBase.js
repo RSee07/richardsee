@@ -9,6 +9,10 @@ const Wrapper = styled.div`
     background-color: rgba(255, 255, 255, 0.07); /* Need to use rgba to apply opacity */
     border: 1px solid ${color.cardWhite};
     box-shadow: 1px 6px 10px ${color.black};
+
+    @media (min-width: 400px) {
+        margin-bottom: 30px;
+    }
 `
 
 const Banner = styled.div`
