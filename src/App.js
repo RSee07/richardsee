@@ -16,18 +16,40 @@ import { color } from './components/Helper'
 
 // Inject styles directly. Cannot apply styled component to body so inject directly
 injectGlobal`
+    html {
+        min-height: 100%;
+        width: 100%;
+    }
+
     body {
+        height: 100%;
+        width: 100%;
         margin: 0;
         padding: 0;
         font-family: sans-serif;
-        background: ${color.black};  /* Fallback for old browsers */
+        background: ${color.black}; /* Fallback for old browsers */
         background: ${color.background};
         background-size: cover;
         background-position: 50% 50%;
-        background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
+`
+
+// Forces gradient background to be over the mobile viewport only
+// Without this on iOS gradient over the entire height of the page
+// Having this works for Android. iOS has the bottom pop
+// Probably not needed for desktop
+const GradientBackground = styled.div`
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: ${color.background};
+    z-index: -10;
+    /* background-repeat: no-repeat; */
+    background-attachment: local;
 `
 
 // Declare pages
@@ -76,18 +98,22 @@ export default class App extends React.Component {
         })
 
         return (
-            <BrowserRouter>
-                <ScrollToTop>
-                    <Switch>
-                        {/* Conditionally render routeLinks once data has been loaded */}
-                        {this.state.data && routeLinks}
-                        <Route
-                            path="/"
-                            render={() => <Intro />}
-                        />
-                    </Switch>
-                </ScrollToTop>
-            </BrowserRouter>
+            <Fragment>
+                <GradientBackground/>
+                <BrowserRouter>
+                    <ScrollToTop>
+                        <Switch>
+                            {/* Conditionally render routeLinks once data has been loaded */}
+                            {this.state.data && routeLinks}
+                            <Route
+                                path="/"
+                                render={() => <Intro />}
+                            />
+                        </Switch>
+                    </ScrollToTop>
+                </BrowserRouter>
+            </Fragment>
+            
         )
     }
 }
