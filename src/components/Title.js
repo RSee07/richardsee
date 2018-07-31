@@ -22,6 +22,10 @@ const TitleOuter = styled.div`
     justify-content: center;
     background-color: rgba(0,0,0,0.22);
     box-shadow: 0 5px 30px 10px rgba(0,0,0,0.22);
+
+    @media (min-width: 600px) {
+        height: 40vw;
+    }
 `
 
 const TitleInner = styled.div`
