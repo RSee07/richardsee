@@ -74,19 +74,20 @@ const Nav = styled.nav`
 
 const ListWrapper = styled.ul`
     list-style-type: none;
-    padding: 0;
+    padding: 7px 0;
     margin: 0;
     width: 150px;
+    background: ${color.background};
+    border: 1px solid ${color.white};
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px 2px ${color.black};
 `
 
 const ListItem = styled.li`
     display: inline-flex;
     padding: 0;
-    margin: 7px 0;
     width: 100%;
     height: 40px;
-    background: ${color.background};
-    box-shadow: 2px 2px 10px 2px ${color.black};
 
     @media (min-width: 1200px) {
         height: 50px;
@@ -99,7 +100,7 @@ const Navlink = styled(NavLink)`
     color: ${color.white};
     text-decoration: none;
     font-size: 20px;
-    margin: auto;
+    margin: 7px 0;
     transition: all .15s ease-in-out;
 
     @media (min-width: 1200px) {
