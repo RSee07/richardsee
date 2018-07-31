@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import Title, { AfterTitleWrapper } from '../Title'
+import PageBase from './PageBase'
 import CardBase from '../card/CardBase'
 import * as Text from '../Text'
 import me from '../../static/media/me.png'
@@ -36,17 +36,14 @@ const Hero = styled.img`
  `
 
 const About = (props) => (
-    <Fragment>
-        <Title>About</Title>
-        <AfterTitleWrapper>
-            <CardBase noBanner>
-                <Hero src={me} />
-            </CardBase>
-            <CardBase noBanner>
-                <Text.P>Hey this is me</Text.P>
-            </CardBase>
-        </AfterTitleWrapper>
-    </Fragment>
+    <PageBase title='About'>
+        <CardBase noBanner>
+            <Hero src={me} />
+        </CardBase>
+        <CardBase noBanner>
+            <Text.P>Hey this is me</Text.P>
+        </CardBase>
+    </PageBase>
 )
 
 export default About

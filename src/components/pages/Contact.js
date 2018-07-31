@@ -1,8 +1,7 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import Title, { AfterTitleWrapper } from '../Title'
+import PageBase from './PageBase'
 import CardBase from '../card/CardBase'
-import * as Text from '../Text'
 import { color } from '../Helper'
 // Explicit import as limited number of icons used.
 // Allows icons to be subsetted, optimizing final bundle. Only icons imported are included in the bundle
@@ -35,41 +34,38 @@ const Link = styled.a`
 `
 
 const Contact = ({ email, mobile, linkedIn, facebook, instagram }) => (
-    <Fragment>
-        <Title>Contact</Title>
-        <AfterTitleWrapper>
-            <CardBase title='Email'>
-                <Content>
-                    <Icon icon={faEnvelopeSquare}/>
-                    <Link href={"mailto:" + email + "?subject=Enquiries"}>{email}</Link>
-                </Content>
-            </CardBase>
-            <CardBase title='Mobile'>
-                <Content>
-                    <Icon icon={faPhoneSquare}/>
-                    <Link href={"tel:" + mobile}>{mobile}</Link>
-                </Content>
-            </CardBase>
-            <CardBase title='LinkedIn'>
-                <Content>
-                    <Icon icon={faLinkedin}/>
-                    <Link target="_blank" rel="noopener noreferrer" href={linkedIn}>richard-see</Link>
-                </Content>
-            </CardBase>
-            <CardBase title='Facebook'>
-                <Content>
-                    <Icon icon={faFacebook}/>
-                    <Link target="_blank" rel="noopener noreferrer" href={facebook}>richardcysee</Link>
-                </Content>
-            </CardBase>
-            <CardBase title='Instagram'>
-                <Content>
-                    <Icon icon={faInstagram}/>
-                    <Link target="_blank" rel="noopener noreferrer" href={instagram}>richard_cy_see</Link>
-                </Content>
-            </CardBase>
-        </AfterTitleWrapper>
-    </Fragment>
+    <PageBase title='Contact'>
+        <CardBase title='Email'>
+            <Content>
+                <Icon icon={faEnvelopeSquare}/>
+                <Link href={"mailto:" + email + "?subject=Enquiries"}>{email}</Link>
+            </Content>
+        </CardBase>
+        <CardBase title='Mobile'>
+            <Content>
+                <Icon icon={faPhoneSquare}/>
+                <Link href={"tel:" + mobile}>{mobile}</Link>
+            </Content>
+        </CardBase>
+        <CardBase title='LinkedIn'>
+            <Content>
+                <Icon icon={faLinkedin}/>
+                <Link target="_blank" rel="noopener noreferrer" href={linkedIn}>richard-see</Link>
+            </Content>
+        </CardBase>
+        <CardBase title='Facebook'>
+            <Content>
+                <Icon icon={faFacebook}/>
+                <Link target="_blank" rel="noopener noreferrer" href={facebook}>richardcysee</Link>
+            </Content>
+        </CardBase>
+        <CardBase title='Instagram'>
+            <Content>
+                <Icon icon={faInstagram}/>
+                <Link target="_blank" rel="noopener noreferrer" href={instagram}>richard_cy_see</Link>
+            </Content>
+        </CardBase>
+    </PageBase>
 )
 
 export default Contact
