@@ -25,7 +25,6 @@ const Nav = styled(Link)`
 
 const Text = H1.extend`
     font-family: 'Poppins', sans-serif;
-    margin: 0;
     color: ${color.white};
     font-size: 40px;
     font-weight: normal;
