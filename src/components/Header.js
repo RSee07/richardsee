@@ -113,7 +113,7 @@ const Navlink = styled(NavLink)`
 `
 
 // Declare pages
-const pages = ['', 'Work', 'About', 'Contact']
+const pages = ['', 'About', 'Work', 'Contact']
 
 export default class Header extends React.Component {
     state = {
