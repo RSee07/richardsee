@@ -32,7 +32,7 @@ const TitleInner = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid ${color.white};
+    border: 1px solid ${color.white};
 `
 
 const ArrowContainer = styled.div`
@@ -41,7 +41,7 @@ const ArrowContainer = styled.div`
     padding-bottom: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     box-sizing: border-box;
 `
 
@@ -51,6 +51,8 @@ const Title = ({children}) => (
             <Text.H1>{children}</Text.H1>
         </TitleInner>
         <ArrowContainer>
+            <ArrowDown color={color.white}/>
+            <ArrowDown color={color.white}/>
             <ArrowDown color={color.white}/>
         </ArrowContainer>
     </TitleOuter>
