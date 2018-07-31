@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PageBase from './PageBase'
 import Job from './Job'
 import * as Text from '../Text'
