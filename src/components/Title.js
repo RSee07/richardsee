@@ -7,6 +7,10 @@ export const AfterTitleWrapper = styled.div`
     padding: 20px;
     box-sizing: border-box;
     min-height: 100vh;
+
+    @media (min-width: 600px) {
+        padding: 50px;
+    }
 `
 
 const TitleOuter = styled.div`
@@ -14,6 +18,10 @@ const TitleOuter = styled.div`
     height: 100vh;
     box-sizing: border-box;
     padding: 20px;
+
+    @media (min-width: 600px) {
+        padding: 50px;
+    }
 `
 
 const TitleInner = styled.div`
@@ -23,7 +31,7 @@ const TitleInner = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid ${color.white}
+    border: 3px solid ${color.white};
 `
 
 const Title = (props) => (
