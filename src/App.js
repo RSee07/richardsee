@@ -16,10 +16,10 @@ import { color } from './components/Helper'
 
 // Inject styles directly. Cannot apply styled component to body so inject directly
 injectGlobal`
-    html {
-        min-height: 100%;
+    /* html {
+        height: 100%;
         width: 100%;
-    }
+    } */
 
     body {
         height: 100%;
@@ -27,12 +27,26 @@ injectGlobal`
         margin: 0;
         padding: 0;
         font-family: sans-serif;
-        background: ${color.black}; /* Fallback for old browsers */
-        background: ${color.background};
+        /* Color most closely matches the color where the clipping on iOS occurs */
+        background: ${color.backgroundFallback}; /* Fallback for old browsers */
+        /* background: ${color.background};
         background-size: cover;
         background-position: 50% 50%;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-attachment: fixed; */
+
+        &:after{
+            content:"";
+            position:fixed; /* stretch a fixed position to the whole screen */
+            top:0;
+            height:100vh; /* fix for mobile browser address bar appearing disappearing */
+            left:0;
+            right:0;
+            z-index:-1; /* needed to keep in the background */
+            background: ${color.background};
+            background-size: 100% 100%;
+            /* background-size: cover; */
+        }
     }
 `
 
@@ -48,8 +62,10 @@ const GradientBackground = styled.div`
     bottom: 0;
     background: ${color.background};
     z-index: -10;
-    /* background-repeat: no-repeat; */
-    background-attachment: local;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
 `
 
 // Declare pages
@@ -99,7 +115,7 @@ export default class App extends React.Component {
 
         return (
             <Fragment>
-                <GradientBackground/>
+                {/* <GradientBackground/> */}
                 <BrowserRouter>
                     <ScrollToTop>
                         <Switch>
@@ -113,7 +129,6 @@ export default class App extends React.Component {
                     </ScrollToTop>
                 </BrowserRouter>
             </Fragment>
-            
         )
     }
 }
