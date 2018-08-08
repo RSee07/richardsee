@@ -1,7 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { CSSTransition } from 'react-transition-group';
 import { NavLink } from 'react-router-dom'
 import { color } from './Helper'
+
+// Declare pages
+const pages = ['', 'About', 'Work', 'Contact']
+const transitionName = 'nav'
 
 const HeaderWrapper = styled.header`
     display: inline-block;
@@ -68,8 +73,26 @@ const Nav = styled.nav`
     top: -5px;
     right: 75px;
     transition: 0.3s;
-    opacity: ${prop => prop.open ? '1' : '0'};
-    transform: ${prop => prop.open ? 'translate(0)' : 'translate(20px)'};
+
+    &.${transitionName}-enter {
+        opacity: 0.1;
+        transform: translate(20px)
+    }
+
+    &.${transitionName}-enter-active {
+        opacity: 1;
+        transform: translate(0)
+    }
+
+    &.${transitionName}-exit {
+        opacity: 1;
+        transform: translate(0)
+    }
+
+    &.${transitionName}-exit-active {
+        opacity: 0.1;
+        transform: translate(20px)
+    }
 `
 
 const ListWrapper = styled.ul`
@@ -113,9 +136,6 @@ const Navlink = styled(NavLink)`
     }
 `
 
-// Declare pages
-const pages = ['', 'About', 'Work', 'Contact']
-
 export default class Header extends React.Component {
     state = {
         openDropdown: false,
@@ -144,11 +164,18 @@ export default class Header extends React.Component {
                     </BarWrapper>
                 </Circle>
                 <DropdownButton onClick={this.toggleDropdown} />
-                <Nav open={this.state.openDropdown}>
-                    <ListWrapper>
-                        {links}
-                    </ListWrapper>
-                </Nav>
+                <CSSTransition
+                    in={this.state.openDropdown}
+                    timeout={500}
+                    classNames={transitionName}
+                    unmountOnExit
+                >
+                    <Nav>
+                        <ListWrapper>
+                            {links}
+                        </ListWrapper>
+                    </Nav>
+                </CSSTransition>
             </HeaderWrapper>
         )
     }
