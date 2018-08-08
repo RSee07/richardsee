@@ -29,23 +29,17 @@ injectGlobal`
         font-family: sans-serif;
         /* Color most closely matches the color where the clipping on iOS occurs */
         background: ${color.backgroundFallback}; /* Fallback for old browsers */
-        /* background: ${color.background};
-        background-size: cover;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-attachment: fixed; */
 
         &:after{
-            content:"";
-            position:fixed; /* stretch a fixed position to the whole screen */
-            top:0;
-            height:100vh; /* fix for mobile browser address bar appearing disappearing */
-            left:0;
-            right:0;
-            z-index:-1; /* needed to keep in the background */
+            content: "";
+            position: fixed; /* Stretch a fixed position to the whole screen */
+            top: 0;
+            height: 100vh; /* Fix for mobile browser address bar appearing disappearing */
+            left: 0;
+            right: 0;
+            z-index: -1; /* Needed to keep in the background */
             background: ${color.background};
             background-size: 100% 100%;
-            /* background-size: cover; */
         }
     }
 `
