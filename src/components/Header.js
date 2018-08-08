@@ -134,6 +134,10 @@ const Navlink = styled(NavLink)`
         transition: all .15s ease-in-out;
         color: ${color.orange};
     }
+
+    &.active {
+        color: ${color.arrowOrange};
+    }
 `
 
 export default class Header extends React.Component {
@@ -151,7 +155,17 @@ export default class Header extends React.Component {
         const links = pages.map(page => {
             const to = `/${page.toLowerCase()}`
             const title = (page === '') ? 'Home' : page
-            return <ListItem key={page}><Navlink onClick={this.toggleDropdown} to={to}>{title}</Navlink></ListItem>
+            return (
+                <ListItem key={page}>
+                    <Navlink
+                        exact
+                        onClick={this.toggleDropdown}
+                        to={to}
+                    >
+                        {title}
+                    </Navlink>
+                </ListItem>
+            )
         })
 
         return(
