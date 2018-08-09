@@ -66,7 +66,7 @@ export default class App extends React.Component {
         return (
             <BrowserRouter>
                 <ScrollToTop>
-                    <Content data={this.state.data} />
+                    {this.state.data && <Content data={this.state.data} />}
                 </ScrollToTop>
             </BrowserRouter>
         )
