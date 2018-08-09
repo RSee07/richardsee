@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 
     &.${transitionName}-enter {
         opacity: 0.1;
-        transform: translate(-30px);
+        transform: translate(-50px);
     }
 
     &.${transitionName}-enter-active {
