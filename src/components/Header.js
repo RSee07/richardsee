@@ -180,7 +180,7 @@ export default class Header extends React.Component {
                 <DropdownButton onClick={this.toggleDropdown} />
                 <CSSTransition
                     in={this.state.openDropdown}
-                    timeout={500}
+                    timeout={100}
                     classNames={transitionName}
                     unmountOnExit
                 >
