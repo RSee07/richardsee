@@ -20,26 +20,23 @@ const Wrapper = styled.div`
     padding: 0;
     margin: 0;
 
-    .${transitionName}-enter {
+    &.${transitionName}-enter {
         opacity: 0.1;
-        transform: translate(20px);
+        transform: translate(-30px);
     }
 
-    .${transitionName}-enter-active {
+    &.${transitionName}-enter-active {
         opacity: 1;
         transform: translate(0);
-        transition: all 300ms ease-in;
+        transition: all 200ms ease-in;
     }
 
-    .${transitionName}-exit {
-        opacity: 1;
-        transform: translate(0)
+    &.${transitionName}-exit {
+        opacity: 0;
     }
 
-    .${transitionName}-exit-active {
-        opacity: 0.1;
-        transform: translate(20px);
-        transition: all 300ms ease-in;
+    &.${transitionName}-exit-active {
+        opacity: 0;
     }
 `
 
@@ -81,16 +78,16 @@ const Content = ({ data, location }) => {
         })
         
         return (
-            <Wrapper>
+
                 <TransitionGroup className="transition-group">
                     <CSSTransition
                         key={location.key}
-                        timeout={300}
+                        timeout={200}
                         classNames={transitionName}
                         unmountOnExit
                     >
-                    <section className="route-section">
-                        <Switch location={location}>
+                    <Wrapper>
+                    <Switch location={location}>
                             {/* Conditionally render routeLinks once data has been loaded */}
                             {data && routeLinks}
                             <Route
@@ -98,10 +95,9 @@ const Content = ({ data, location }) => {
                                 render={() => <Intro />}
                             />
                         </Switch>
-                        </section>
+                    </Wrapper>
                     </CSSTransition>
                 </TransitionGroup>
-            </Wrapper>
         )
 }
 
