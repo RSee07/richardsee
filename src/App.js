@@ -1,26 +1,13 @@
-import React, { Fragment } from 'react'
-import {
-    BrowserRouter,
-    Route,
-    Switch
-} from 'react-router-dom'
+import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import styled, { injectGlobal } from 'styled-components'
 import ScrollToTop from './components/ScrollToTop'
 import personal from './static/data/personal.json'
-import Header from './components/Header'
-import Intro from './components/pages/Intro'
-import Work from './components/pages/Work'
-import About from './components/pages/About'
-import Contact from './components/pages/Contact'
+import Content from './components/pages/Content'
 import { color } from './components/Helper'
 
 // Inject styles directly. Cannot apply styled component to body so inject directly
 injectGlobal`
-    /* html {
-        height: 100%;
-        width: 100%;
-    } */
-
     body {
         height: 100%;
         width: 100%;
@@ -62,9 +49,6 @@ const GradientBackground = styled.div`
     background-attachment: scroll;
 `
 
-// Declare pages
-const pages = ['about', 'work', 'contact']
-
 export default class App extends React.Component {
     // State definition
     state = {
@@ -79,50 +63,12 @@ export default class App extends React.Component {
     }
 
     render() {
-        // Loop through pages and generate Route for each
-        // Figure out how to only render once
-        const routeLinks = pages.map(page => {
-            const path = '/' + page
-            let pageType
-
-            switch(page) {
-                case ('about'):
-                    pageType = <About page="About page" />
-                    break
-                case ('work'):
-                    pageType = <Work coreSkills={this.state.data.coreSkills} careerHistory={this.state.data.careerHistory} />
-                    break
-                case ('contact'):
-                    pageType = <Contact {...this.state.data.contact}/>
-                    break
-                default:
-                    break
-            }
-
-            return (
-                <Route key={page}
-                    path={path}
-                    render={() => <Fragment><Header/>{pageType}</Fragment>}
-                />
-            )
-        })
-
         return (
-            <Fragment>
-                {/* <GradientBackground/> */}
-                <BrowserRouter>
-                    <ScrollToTop>
-                        <Switch>
-                            {/* Conditionally render routeLinks once data has been loaded */}
-                            {this.state.data && routeLinks}
-                            <Route
-                                path="/"
-                                render={() => <Intro />}
-                            />
-                        </Switch>
-                    </ScrollToTop>
-                </BrowserRouter>
-            </Fragment>
+            <BrowserRouter>
+                <ScrollToTop>
+                    <Content data={this.state.data} />
+                </ScrollToTop>
+            </BrowserRouter>
         )
     }
 }
