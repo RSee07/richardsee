@@ -92,7 +92,6 @@ const Content = ({ data, location }) => {
                                 path="/"
                                 render={() => <Intro />}
                             />
-                                
                         </Switch>
                     </Wrapper>
                 </CSSTransition>

@@ -5,6 +5,13 @@ import { ArrowRight } from '../Arrow'
 import { H1, P } from '../Text'
 import { color } from '../Helper'
 
+const DesktopWrapper = styled.div`
+    @media (min-width: 900px) {
+        height: 100vh;
+        display: flex;
+    }
+`
+
 const Wrapper = styled.div`
     width: 100vw;
     box-sizing: border-box;
@@ -13,6 +20,17 @@ const Wrapper = styled.div`
 
     @media (min-width: 400px) {
         padding-left: 50px;
+    }
+
+    @media (min-width: 900px) {
+        width: 800px;
+        padding-top: 0;
+        padding-left: 0;
+        margin: auto;
+    }
+
+    @media (min-width: 1200px) {
+        width: 1100px;
     }
 `
 
@@ -47,6 +65,7 @@ const Text = H1.extend`
 
     @media (min-width: 900px) {
         font-size: 60px;
+        width: 95%;
     }
 
     @media (min-width: 1200px) {
@@ -70,23 +89,25 @@ const IntroP = P.extend`
 `
 
 const Intro = () => (
-    <Wrapper>
-        <IntroP>HI MY NAME IS</IntroP>
-        <Nav to="/about">
-            <Text>RICHARD</Text>
-            <ArrowRight/>
-        </Nav>
-        <IntroP>I'M A</IntroP>
-        <Nav to="/work">
-            <Text>SOFTWARE ENGINEER</Text>
-            <ArrowRight/>
-        </Nav>
-        <IntroP>LET'S</IntroP>
-        <Nav to="/contact">
-            <Text>TALK</Text>
-            <ArrowRight/>
-        </Nav>
-    </Wrapper>
+    <DesktopWrapper>
+        <Wrapper>
+            <IntroP>HI MY NAME IS</IntroP>
+            <Nav to="/about">
+                <Text>RICHARD</Text>
+                <ArrowRight/>
+            </Nav>
+            <IntroP>I'M A</IntroP>
+            <Nav to="/work">
+                <Text>SOFTWARE ENGINEER</Text>
+                <ArrowRight/>
+            </Nav>
+            <IntroP>LET'S</IntroP>
+            <Nav to="/contact">
+                <Text>TALK</Text>
+                <ArrowRight/>
+            </Nav>
+        </Wrapper>
+    </DesktopWrapper>
 )
 
 export default Intro
