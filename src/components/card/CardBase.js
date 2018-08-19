@@ -13,6 +13,10 @@ const Wrapper = styled.div`
     @media (min-width: 400px) {
         margin-bottom: 30px;
     }
+
+    @media (min-width: 900px) {
+        width: 47%;
+    }
 `
 
 const Banner = styled.div`
@@ -27,13 +31,13 @@ const Content = styled.div`
     padding: ${prop => prop.work ? '20px 20px 40px' : '20px'};
 `
 
-const CardBase = ({noBanner, work, title, date, children}) => (
+const CardBase = ({noBanner, work, contact, title, date, children}) => (
     <Wrapper>
         {!noBanner && <Banner>
             <Text.H4>{title}</Text.H4>
             {date && <Text.Date>{date}</Text.Date>}
         </Banner>}
-        <Content work={work}>
+        <Content work={work} contact={contact}>
             {children}
         </Content>
     </Wrapper>
