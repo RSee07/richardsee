@@ -14,7 +14,11 @@ const TitleOuter = styled.div`
     box-shadow: 0 5px 30px 10px rgba(0,0,0,0.22);
 
     @media (min-width: 600px) {
-        height: 40vw;
+        height: 260px;
+    }
+
+    @media (min-width: 900px) {
+        height: 220px;
     }
 `
 
