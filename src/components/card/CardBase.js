@@ -15,7 +15,8 @@ const Wrapper = styled.div`
     }
 
     @media (min-width: 900px) {
-        width: ${prop => prop.contact ? '47%' : undefined}
+        width: ${prop => prop.contact ? '47%' : 'unset'};
+        margin-bottom: 50px;
     }
 `
 
