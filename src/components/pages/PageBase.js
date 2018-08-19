@@ -10,8 +10,8 @@ const TitleOuter = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0,0,0,0.22);
-    box-shadow: 0 5px 30px 10px rgba(0,0,0,0.22);
+    background-color: rgba(0,0,0,0.15);
+    box-shadow: 0 5px 30px 10px rgba(0,0,0,0.15);
 
     @media (min-width: 600px) {
         height: 260px;
