@@ -36,7 +36,7 @@ const PageContent = styled.div`
 
     @media (min-width: 1200px) {
         width: 1100px;
-        padding: 0px;
+        padding: 50px 0px;
         margin: auto;
     }
 `

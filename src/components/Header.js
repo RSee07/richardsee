@@ -111,10 +111,6 @@ const ListItem = styled.li`
     padding: 0;
     width: 100%;
     height: 40px;
-
-    @media (min-width: 1200px) {
-        height: 50px;
-    }
 `
 
 const Navlink = styled(NavLink)`
@@ -125,10 +121,6 @@ const Navlink = styled(NavLink)`
     font-size: 20px;
     margin: 7px 0;
     transition: all .15s ease-in-out;
-
-    @media (min-width: 1200px) {
-        font-size: 28px;
-    }
 
     &:hover {
         transition: all .15s ease-in-out;
