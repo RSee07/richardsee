@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     }
 
     @media (min-width: 900px) {
-        width: 47%;
+        width: ${prop => prop.contact ? '47%' : undefined}
     }
 `
 
@@ -32,12 +32,12 @@ const Content = styled.div`
 `
 
 const CardBase = ({noBanner, work, contact, title, date, children}) => (
-    <Wrapper>
+    <Wrapper contact={contact}>
         {!noBanner && <Banner>
             <Text.H4>{title}</Text.H4>
             {date && <Text.Date>{date}</Text.Date>}
         </Banner>}
-        <Content work={work} contact={contact}>
+        <Content work={work}>
             {children}
         </Content>
     </Wrapper>
