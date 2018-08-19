@@ -33,6 +33,12 @@ const PageContent = styled.div`
     @media (min-width: 600px) {
         padding: 50px;
     }
+
+    @media (min-width: 1200px) {
+        width: 1100px;
+        padding: 0px;
+        margin: auto;
+    }
 `
 
 const PageBase = ({title, children}) => (
