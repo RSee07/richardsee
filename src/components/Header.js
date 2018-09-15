@@ -132,7 +132,7 @@ const Navlink = styled(NavLink)`
     }
 `
 
-export default class Header extends React.Component {
+export default class Header extends React.PureComponent {
     state = {
         openDropdown: false,
     }
@@ -144,6 +144,7 @@ export default class Header extends React.Component {
     }
 
     render() {
+        console.log('render')
         const links = pages.map(page => {
             const to = `/${page.toLowerCase()}`
             const title = (page === '') ? 'Home' : page
