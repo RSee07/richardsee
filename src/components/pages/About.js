@@ -45,7 +45,6 @@ const About = ({ profile }) => (
         </CardBase>
         <CardBase noBanner>
             {renderProfile(profile)}
-            {/* <Text.P>{`${profile}`}</Text.P> */}
         </CardBase>
     </PageBase>
 )
