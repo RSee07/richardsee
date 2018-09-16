@@ -50,7 +50,7 @@ const Content = ({ data, location }) => {
 
             switch(page) {
                 case ('about'):
-                    pageType = <About page="About page" />
+                    pageType = <About page="About page" profile={data.profile}/>
                     break
                 case ('work'):
                     pageType = <Work coreSkills={data.coreSkills} careerHistory={data.careerHistory} />

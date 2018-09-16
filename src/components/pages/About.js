@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PageBase from './PageBase'
 import CardBase from '../card/CardBase'
-import * as Text from '../Text'
+import { P } from '../Text'
 import me from '../../static/media/me.png'
 
 const Hero = styled.img`
@@ -29,19 +29,34 @@ const Hero = styled.img`
     }
 
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
         transition: all .2s ease-in-out;
         filter: grayscale(0%);
      }
  `
 
-const About = (props) => (
+const PWithPadding = styled(P)`
+    padding: 10px 0;
+`
+
+const renderProfile = (profile) => {
+    return profile.map((paragraph, i) => {
+        // Adding padding for every second paragraph
+        if (i % 2 !== 0) {
+            return <PWithPadding key={i}>{paragraph}</PWithPadding>
+        }
+        return <P key={i}>{paragraph}</P>
+    })
+}
+
+const About = ({ profile }) => (
     <PageBase title='About'>
         <CardBase noBanner>
             <Hero src={me} />
         </CardBase>
         <CardBase noBanner>
-            <Text.P>Hey this is me</Text.P>
+            {renderProfile(profile)}
+            {/* <Text.P>{`${profile}`}</Text.P> */}
         </CardBase>
     </PageBase>
 )

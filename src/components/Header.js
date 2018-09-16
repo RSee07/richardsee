@@ -144,7 +144,6 @@ export default class Header extends React.PureComponent {
     }
 
     render() {
-        console.log('render')
         const links = pages.map(page => {
             const to = `/${page.toLowerCase()}`
             const title = (page === '') ? 'Home' : page
