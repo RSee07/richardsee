@@ -42,6 +42,8 @@ const Wrapper = styled.div`
 
 
 const Content = ({ data, location }) => {
+        const { profile, coreSkills, careerHistory, contact } = data
+
         // Loop through pages and generate Route for each
         // Figure out how to only render once
         const routeLinks = pages.map(page => {
@@ -50,13 +52,13 @@ const Content = ({ data, location }) => {
 
             switch(page) {
                 case ('about'):
-                    pageType = <About page="About page" profile={data.profile}/>
+                    pageType = <About page="About page" profile={profile}/>
                     break
                 case ('work'):
-                    pageType = <Work coreSkills={data.coreSkills} careerHistory={data.careerHistory} />
+                    pageType = <Work coreSkills={coreSkills} careerHistory={careerHistory} />
                     break
                 case ('contact'):
-                    pageType = <Contact {...data.contact}/>
+                    pageType = <Contact {...contact}/>
                     break
                 default:
                     break
