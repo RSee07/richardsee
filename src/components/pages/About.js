@@ -33,13 +33,9 @@ const PWithPadding = styled(P)`
 `
 
 const renderProfile = (profile) => {
-    return profile.map((paragraph, i) => {
-        // Adding padding for every second paragraph
-        if (i % 2 !== 0) {
-            return <PWithPadding key={i}>{paragraph}</PWithPadding>
-        }
-        return <P key={i}>{paragraph}</P>
-    })
+    return profile.map((paragraph, i) => (
+        <PWithPadding key={i}>{paragraph}</PWithPadding>
+    ))
 }
 
 const About = ({ profile }) => (
