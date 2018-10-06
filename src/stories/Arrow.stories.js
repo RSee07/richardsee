@@ -3,9 +3,9 @@ import { storiesOf } from '@storybook/react'
 import { ArrowRight, ArrowDown } from '../components/Arrow'
 
 storiesOf('Arrow', module)
-    .add('Arrow Right', () => (
+    .addWithJSX('Arrow Right', () => (
         <ArrowRight />
     ))
-    .add('Arrow Down', () => (
+    .addWithJSX('Arrow Down', () => (
         <ArrowDown />
     ))
