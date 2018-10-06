@@ -75,23 +75,23 @@ const Nav = styled.nav`
     transition: 0.3s;
 
     &.${transitionName}-enter {
-        opacity: 0.1;
-        transform: translate(20px)
+        opacity: 0;
+        transform: translate(20px);
     }
 
     &.${transitionName}-enter-active {
         opacity: 1;
-        transform: translate(0)
+        transform: translate(0);
     }
 
     &.${transitionName}-exit {
         opacity: 1;
-        transform: translate(0)
+        transform: translate(0);
     }
 
     &.${transitionName}-exit-active {
         opacity: 0.1;
-        transform: translate(20px)
+        transform: translate(20px);
     }
 `
 
