@@ -73,7 +73,7 @@
                 }
             ]
         },
-        { 
+        {
             "title": "Associate Development Engineer",
             "company": "Spark New Zealand",
             "work": [
@@ -148,9 +148,4 @@
             "description": "Built controller connected to Raspberry Pi to control LIFX lights"
         }
     ]
-  }
-  
-  
-  
-  
-  
+}
