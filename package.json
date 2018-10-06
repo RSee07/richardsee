@@ -57,9 +57,11 @@
         "build": "node scripts/build.js",
         "test": "jest",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
+        "deploy": "gh-pages -d build",
+        "storybook": "start-storybook -p 9001 -c .storybook"
     },
     "devDependencies": {
+        "@storybook/react": "^3.4.11",
         "ajv": "^6.5.2",
         "ajv-keywords": "^3.2.0",
         "babel-plugin-transform-class-properties": "^6.24.1",
