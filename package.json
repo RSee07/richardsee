@@ -61,6 +61,8 @@
         "storybook": "start-storybook -p 9001 -c .storybook"
     },
     "devDependencies": {
+        "@storybook/addon-info": "^3.4.11",
+        "@storybook/addon-knobs": "^3.4.11",
         "@storybook/react": "^3.4.11",
         "ajv": "^6.5.2",
         "ajv-keywords": "^3.2.0",
