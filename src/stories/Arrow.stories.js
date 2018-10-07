@@ -23,7 +23,7 @@ storiesOf('Arrow', module)
     .addWithJSX('Arrow Down',
         withInfo(`Down Arrow to potentially be used in the future`)(
             () => (
-                <ArrowDown />
+                <ArrowDown color={color('color', colors.arrowOrange)} />
             )
         )
     )
